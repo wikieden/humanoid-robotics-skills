@@ -13,6 +13,7 @@
 | 板端服务已受理命令，反馈在哪一层中断？ | [嵌入式与 MCU 联调](robot-embedded-bringup/SKILL.md) |
 | 什么证据能确认停稳，复位后如何防止旧指令引起运动？ | [安全策略与防护验证](robot-safety-policy/SKILL.md) |
 | 外壳静态装得下，多个关节一起运动时，哪两处表面最先靠近？ | [运动外壳间隙审查](robot-shell-clearance/SKILL.md) |
+| 某个动作会产生多大电气负载，按实际任务中动静交替的比例，电池能用多久？ | [执行器负载与电池续航估算](robot-motion-energy/SKILL.md) |
 
 ## 感知、标定与导航
 
@@ -37,6 +38,7 @@
 | 路点均达标，控制器插值后的速度或加速度是否超限？ | [轨迹定时与插值](robot-trajectory-retiming/SKILL.md) |
 | 策略选线后任务仍失败，偏差始于规划、跟踪还是接触？ | [运动控制与强化学习验证](robot-motion-validation/SKILL.md) |
 | 仿真松爪后，物体确实得到支撑，还是被残留约束固定在原位？ | [接触任务仿真验收](robot-sim-contact-validation/SKILL.md) |
+| 从任务中途的快照恢复后，同一动作还能复现连续运行时的接触和运动吗？ | [仿真快照恢复与分支验证](robot-sim-state-restore/SKILL.md) |
 | 预览是否在本次仿真结束前就显示了新画面，开启渲染会不会改变结果？ | [仿真实时预览验证](robot-simulation-preview/SKILL.md) |
 | 人形机器人能否在整段试验中保持站立，并跟随指定速度行走和转向？ | [人形步态仿真评测](robot-locomotion-sim-eval/SKILL.md) |
 | 把策略样本左右镜像后，另一侧肢体是否真的朝预期方向运动？ | [机器人策略左右镜像验证](robot-policy-symmetry/SKILL.md) |
@@ -49,6 +51,7 @@
 | 操作员扣左侧扳机，夹爪或机械臂的动作在哪一层反了？ | [遥操作输入映射](robot-teleop-bringup/SKILL.md) |
 | 要训练这个动作，第一视角视频、手持工具和机器人遥操作各能提供哪些标签？ | [示教采集方案设计](robot-capture-design/SKILL.md) |
 | 转换后的轨迹能否训练，当前划分能检验哪种泛化能力？ | [示教轨迹与数据集验收](robot-episode-audit/SKILL.md) |
+| 新版读取器能否读懂历史示教记录，保留未知时间、缺失标签和原始采样率？ | [示教记录元数据迁移](robot-episode-schema-migration/SKILL.md) |
 | 哪些连续动作窗口确实来自人工纠正，可以作为专家标签？ | [人工接管标签验收](robot-takeover-audit/SKILL.md) |
 
 ## 策略训练与评测
@@ -71,6 +74,7 @@
 | “下一站”重发或迟到时，协议应如何推进任务状态？ | [长任务协议与回执验收](robot-task-protocol/SKILL.md) |
 | 这次任务已在界面显示完成，日志里第一处缺失的回执在哪里？ | [端云任务追踪](robot-task-trace/SKILL.md) |
 | 设备是播完了、被打断了，还是断线重连后又播了一次？ | [语音打断与播报验收](robot-voice-playback/SKILL.md) |
+| 发送端平均速率足够，连续播报为何仍然断续，哪一层最先供不上音频？ | [流式语音播放欠载诊断](robot-streaming-audio/SKILL.md) |
 | 动作换版或撤回后，哪些租户和机器人仍引用旧版？ | [动作资产发布与撤回](robot-action-release/SKILL.md) |
 
 ## 通用工程方法：Agent 评测与技术学习
@@ -78,6 +82,7 @@
 | 要回答的问题 | Skill |
 | --- | --- |
 | 两种 Agent 工作流通过率相同，各自解决了哪些任务，每个成功任务花了多少成本？ | [Agent 工作流配对评测](agent-harness-comparison/SKILL.md) |
+| 任务究竟在哪个执行环境里读取输入、运行并产生了交付文件？ | [Agent 任务执行位置验证](agent-execution-placement/SKILL.md) |
 | 怎么把一个技术问题做成小实验，把真实错答变成复习卡，下次从断点继续学？ | [技术学习实验与复习卡](technical-study-lab/SKILL.md) |
 
 ## 交互工具与离线归档

@@ -2,7 +2,7 @@
 
 English · [简体中文](README.zh-CN.md)
 
-This collection contains 45 English-language agent skills. Of these, 39 cover humanoid and mobile manipulation robotics. The other six cover agent evaluation, technical learning, interactive applications, offline archives, skill distribution and technical publishing. Each skill is a Markdown workflow for a specific engineering decision, from tracing a reversed gripper command to deciding whether a new robot policy should replace its baseline.
+This collection contains 50 English-language agent skills. Of these, 43 cover humanoid and mobile manipulation robotics. The other seven cover agent evaluation and execution, technical learning, interactive applications, offline archives, skill distribution and technical publishing. Each skill is a Markdown workflow for a specific engineering decision, from tracing a reversed gripper command to deciding whether a new robot policy should replace its baseline.
 
 ## Use a skill
 
@@ -18,13 +18,13 @@ Browse the [skill index](skills/README.md) to choose a workflow by engineering q
 
 | Category | Skills |
 | --- | ---: |
-| [Systems, deployment, and safety](skills/README.md#systems-deployment-and-safety) | 5 |
+| [Systems, deployment, and safety](skills/README.md#systems-deployment-and-safety) | 6 |
 | [Perception, calibration, and navigation](skills/README.md#perception-calibration-and-navigation) | 9 |
-| [Grasping, planning, and motion control](skills/README.md#grasping-planning-and-motion-control) | 8 |
-| [Teleoperation and demonstration data](skills/README.md#teleoperation-and-demonstration-data) | 5 |
+| [Grasping, planning, and motion control](skills/README.md#grasping-planning-and-motion-control) | 9 |
+| [Teleoperation and demonstration data](skills/README.md#teleoperation-and-demonstration-data) | 6 |
 | [Policy training and evaluation](skills/README.md#policy-training-and-evaluation) | 4 |
-| [Robot platform and cloud services](skills/README.md#robot-platform-and-cloud-services) | 8 |
-| [Engineering methods for agents and technical learning](skills/README.md#engineering-methods-for-agents-and-technical-learning) | 2 |
+| [Robot platform and cloud services](skills/README.md#robot-platform-and-cloud-services) | 9 |
+| [Engineering methods for agents and technical learning](skills/README.md#engineering-methods-for-agents-and-technical-learning) | 3 |
 | [Interactive tools and offline archives](skills/README.md#interactive-tools-and-offline-archives) | 2 |
 | [Skill distribution and technical publishing](skills/README.md#skill-distribution-and-technical-publishing) | 2 |
 

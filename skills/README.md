@@ -13,6 +13,7 @@ Choose a skill by the engineering question at hand. A single investigation may s
 | Where did a command or acknowledgment stop between Linux and the MCU? | [Embedded bring-up](robot-embedded-bringup/SKILL.md) |
 | What establishes standstill, and what prevents motion after reset? | [Physical safeguards](robot-safety-policy/SKILL.md) |
 | A new cover fits at rest. Which two surfaces come closest when its joints move together? | [Moving shell clearance review](robot-shell-clearance/SKILL.md) |
+| What electrical load does a motion impose, and how long would the battery last over the full duty cycle? | [Actuator load and battery runtime](robot-motion-energy/SKILL.md) |
 
 ## Perception, calibration, and navigation
 
@@ -37,6 +38,7 @@ Choose a skill by the engineering question at hand. A single investigation may s
 | Does the controller exceed a limit between valid waypoints? | [Trajectory retiming](robot-trajectory-retiming/SKILL.md) |
 | Did the task fail at goal selection, planning, tracking, or contact? | [Motion validation](robot-motion-validation/SKILL.md) |
 | Did the simulated object stay supported after release, or did an attachment or scoring shortcut keep it in place? | [Contact task simulation](robot-sim-contact-validation/SKILL.md) |
+| After restoring a mid-task snapshot, does the same action reproduce the uninterrupted contact and motion? | [Simulation snapshot and branch verification](robot-sim-state-restore/SKILL.md) |
 | Did the preview show this run before it finished, and did rendering affect the result? | [Live simulation preview verification](robot-simulation-preview/SKILL.md) |
 | Can the humanoid follow the commanded velocity and stay upright across a full trial? | [Locomotion simulation evaluation](robot-locomotion-sim-eval/SKILL.md) |
 | Does reflecting a policy sample produce the expected motion of the opposite limb? | [Left-right policy symmetry](robot-policy-symmetry/SKILL.md) |
@@ -49,6 +51,7 @@ Choose a skill by the engineering question at hand. A single investigation may s
 | Which mapping reversed the operator's gripper or arm input? | [Controller mapping](robot-teleop-bringup/SKILL.md) |
 | Which capture method can supply the labels the intended training objective needs? | [Demonstration capture design](robot-capture-design/SKILL.md) |
 | Can the training loader use the converted episodes, and what does the split test? | [Dataset audit](robot-episode-audit/SKILL.md) |
+| Can the current reader migrate old episodes while preserving unknown times, labels and native stream rates? | [Episode metadata migration](robot-episode-schema-migration/SKILL.md) |
 | Which consecutive action windows contain verified human corrections? | [Takeover labels](robot-takeover-audit/SKILL.md) |
 
 ## Policy training and evaluation
@@ -71,6 +74,7 @@ Choose a skill by the engineering question at hand. A single investigation may s
 | How should the protocol handle a duplicated or late command? | [Task protocol](robot-task-protocol/SKILL.md) |
 | For this particular run, where did the earliest receipt go missing? | [Task tracing](robot-task-trace/SKILL.md) |
 | Did the device finish, interrupt, or replay the utterance? | [Voice playback](robot-voice-playback/SKILL.md) |
+| Why does continuous speech stutter even though the sender delivered enough audio on average? | [Streaming speech underruns](robot-streaming-audio/SKILL.md) |
 | Which tenants and robots still resolve a withdrawn or superseded revision? | [Action asset release](robot-action-release/SKILL.md) |
 
 ## Engineering methods for agents and technical learning
@@ -78,6 +82,7 @@ Choose a skill by the engineering question at hand. A single investigation may s
 | Engineering question | Skill |
 | --- | --- |
 | Two agent workflows have the same pass rate. Which tasks did each solve, and at what cost? | [Paired agent harness evaluation](agent-harness-comparison/SKILL.md) |
+| Which execution environment actually read the input, ran the job and produced the artifact? | [Agent execution placement](agent-execution-placement/SKILL.md) |
 | How can a learner test one technical claim, review a mistake, and resume at the next unanswered question? | [Technical study labs and review cards](technical-study-lab/SKILL.md) |
 
 ## Interactive tools and offline archives
