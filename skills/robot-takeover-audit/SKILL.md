@@ -1,0 +1,17 @@
+---
+name: robot-takeover-audit
+description: Audit recordings that mix policy control with human teleoperation. Identify expert labels for behavior cloning or HG-DAgger when recovery holds, late policy responses, or action chunks cross a takeover boundary.
+metadata:
+  title: Human Takeover and Expert Action Label Audit
+---
+
+# Human Takeover and Expert Action Label Audit
+
+Collect the raw sequence before and after a complete handover, control-mode events, and the commands actually committed to the actuator. Preserve episode IDs, frame numbers, and the original timeline. If only video is available, annotate visible intervention and mark the source of the expert action as unverified.
+
+1. Align policy proposals, teleoperation inputs, control transfers, committed actions, and feedback on one timeline. If the system uses control epochs, check whether it discarded responses still in flight from the previous epoch. The interface and actuator can switch control at different times.
+2. Label each committed action by source: policy, human, recovery hold, or unknown. Keep the original labels for review. Apply expert supervision only when a committed action can be traced to valid human input. A recovery process that repeats the last human command produces a hold. Mark conflicting writers or unresolved alignment as unknown. Use control provenance to distinguish a hold from an operator deliberately remaining still.
+3. Preserve context observations. For an expert-only objective, mask each policy, recovery hold, unknown, or out-of-episode action in the chunk. If the loader filters only whole chunks, keep windows entirely inside one continuous stretch of valid human actions. Inspect the mask used by the loss and verify that its denominator counts supervised positions. Preserve original frame adjacency when filtering.
+4. Report counts by source, reasons for unknown labels, the number of continuous human segments, and usable training windows under the selected horizon and masking policy. Show frame-level labels across one boundary and record the versions of the recording, converter, and loader. Identify which counts came from historical reports and which were recomputed.
+
+**Offline check.** Number six consecutive frames from 1. Their committed sources are `policy, human, human, hold, human, human`. Frames 2, 3, 5, and 6 are verified human actions. With a horizon of two, a stride of one, and expert supervision required for every action, the valid windows are `[2, 3]` and `[5, 6]`. A window of `[3, 5]` indicates that filtering joined nonadjacent frames. Use this case to check the loader at a takeover boundary.
