@@ -29,6 +29,8 @@ Choose a skill by the engineering question at hand. A single investigation may s
 | Which grasp permits both approach and retreat with the object? | [Grasp selection](robot-grasp-selection/SKILL.md) |
 | Does the controller exceed a limit between valid waypoints? | [Trajectory retiming](robot-trajectory-retiming/SKILL.md) |
 | Did the task fail at goal selection, planning, tracking, or contact? | [Motion validation](robot-motion-validation/SKILL.md) |
+| Did the simulated object stay supported after release, or did an attachment or scoring shortcut keep it in place? | [Contact task simulation](robot-sim-contact-validation/SKILL.md) |
+| Can the humanoid follow the commanded velocity and stay upright across a full trial? | [Locomotion simulation evaluation](robot-locomotion-sim-eval/SKILL.md) |
 
 ## Teleoperation and demonstration data
 

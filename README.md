@@ -2,7 +2,7 @@
 
 English · [简体中文](README.zh-CN.md)
 
-A collection of 23 English-language agent skills for engineers working on humanoid and mobile manipulation robots. Each skill is a Markdown workflow for a specific engineering decision, from tracing a reversed gripper command to deciding whether a new robot policy should replace its baseline.
+A collection of 25 English-language agent skills for engineers working on humanoid and mobile manipulation robots. Each skill is a Markdown workflow for a specific engineering decision, from tracing a reversed gripper command to deciding whether a new robot policy should replace its baseline.
 
 ## Use a skill
 
@@ -20,7 +20,7 @@ Browse the [skill index](skills/README.md) to choose a workflow by engineering q
 | --- | ---: |
 | [Systems, deployment, and safety](skills/README.md#systems-deployment-and-safety) | 4 |
 | [Perception, calibration, and navigation](skills/README.md#perception-calibration-and-navigation) | 4 |
-| [Grasping, planning, and motion control](skills/README.md#grasping-planning-and-motion-control) | 3 |
+| [Grasping, planning, and motion control](skills/README.md#grasping-planning-and-motion-control) | 5 |
 | [Teleoperation and demonstration data](skills/README.md#teleoperation-and-demonstration-data) | 4 |
 | [Policy training and evaluation](skills/README.md#policy-training-and-evaluation) | 2 |
 | [Robot platform and cloud services](skills/README.md#robot-platform-and-cloud-services) | 6 |

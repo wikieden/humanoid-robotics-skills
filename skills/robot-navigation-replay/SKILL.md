@@ -1,6 +1,6 @@
 ---
 name: robot-navigation-replay
-description: Use recorded sensor data, maps, and navigation logs to reproduce localization drift, obstacle avoidance errors, or missed goals and trace the fault from SLAM through planning, tracking, and base feedback.
+description: Reproduce navigation failures with recorded sensor data, maps, and logs. Use Gazebo closed-loop trials to check how changed commands affect wheel response, obstacle avoidance, and measured goal arrival.
 metadata:
   title: Mapping and Navigation Replay
 ---
@@ -15,4 +15,10 @@ Fix the map version, robot model, start pose, goal, and time window for one fail
 3. Where localization is stable, trace the global path, local avoidance output, tracking velocity, odometry response, and terminal action state in order. If the path is valid but tracking velocity is zero, inspect local obstacles, controller state, and the recorded stop reason. For an SDK backend, identify which events the interface exposes.
 4. Change one parameter at a time on the same recorded interval and compare the time and location of the first divergence. Fixed-input rosbag replay can test perception and decision outputs. Use closed-loop simulation or a physical trial to measure how a change affects the resulting trajectory.
 
-**Deliverable.** Give the recording interval, map version, launch configuration, and replay entry point. Identify the first abnormal signal, supporting evidence, and missing observations. For repeated goal attempts, give successes out of total attempts, goal tolerance, and failure categories.
+## Close the loop in Gazebo
+
+Use a fresh world reset and let the live controller drive the simulated base. Check that participating nodes use simulation time, sensors publish after reset, and the transform chain is available at their timestamps. Trace a short command from controller output through wheel or drive-plugin response to odometry and the independent world pose. Record whether the plugin simulates wheel interaction or directly imposes base velocity. Disable recorded publishers that would overwrite the live loop.
+
+Repeat the same waypoint from the same initial pose with an empty route and with an obstacle in the nominal path. Record the obstacle in both sensor data and the collision world. Check final position and heading against world truth in a known map-to-world alignment, plus collisions, stop reasons, elapsed simulation time, and the navigation action result. A replay can reproduce planning on recorded inputs; this experiment also measures the motion induced by new commands.
+
+**Deliverable.** Give the recording interval or world reset, map version, launch configuration, and reproduction entry point. Identify the first abnormal signal, supporting evidence, and missing observations. For repeated goal attempts, give successes out of total attempts, goal tolerance, and failure categories.

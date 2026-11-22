@@ -1,6 +1,6 @@
 ---
 name: robot-grasp-selection
-description: Develop or compare a grasp selector that combines learned scores with gripper geometry, collision checks, and path feasibility through approach and loaded retreat. Use when the top-scoring pose cannot complete the requested pick.
+description: Choose a grasping approach for an RGB-D manipulation task or compare grasp candidates using gripper geometry, collision checks, and path feasibility through loaded retreat. Covers point-cloud proposals, known-object registration, and demonstration-trained policies.
 metadata:
   title: Grasp Candidate Filtering and Selection
 ---
@@ -8,6 +8,8 @@ metadata:
 # Grasp Candidate Filtering and Selection
 
 Fix a scene snapshot, object hypothesis, initial robot state, gripper model, and requested task stages. Preserve all proposal IDs, poses, opening widths, and model scores before filtering. Staging ends at the requested scope: a lift, a handoff, and a complete pick-and-place have different completion conditions.
+
+If the approach is still open, identify what the next component needs: an object pose, a set of gripper poses, or a sequence of robot actions. Use the [grasp algorithm selection guide](references/grasp-algorithms.md) to select a pipeline and an acceptance test. Apply the candidate checks below when the chosen pipeline produces explicit grasp poses.
 
 1. Generate proposals on target geometry while preserving surrounding context for collision checks. Use a calibrated transform for each approach axis and finger closing direction. Audit object segmentation near adjacent obstacles: removing target points for expected finger contact must preserve the table, nearby objects, and non-contact parts of the target. Record any allowed contact pairs and the stages where they apply.
 2. Reject known violations such as inadequate aperture, collision along approach, or an unreachable pre-grasp pose. For surviving candidates, check IK continuity, gripper closure geometry, lift and retreat. After attachment, use the carried object's geometry and its transform relative to the tool. A pose that clears the gripper at rest can still trap the payload on withdrawal.

@@ -29,6 +29,8 @@
 | 哪个抓取候选既能接近，又能带着物体撤离？ | [抓取候选选优](robot-grasp-selection/SKILL.md) |
 | 路点均达标，控制器插值后的速度或加速度是否超限？ | [轨迹定时与插值](robot-trajectory-retiming/SKILL.md) |
 | 策略选线后任务仍失败，偏差始于规划、跟踪还是接触？ | [运动控制与强化学习验证](robot-motion-validation/SKILL.md) |
+| 仿真松爪后，物体确实得到支撑，还是被残留约束固定在原位？ | [接触任务仿真验收](robot-sim-contact-validation/SKILL.md) |
+| 人形机器人能否在整段试验中保持站立，并跟随指定速度行走和转向？ | [人形步态仿真评测](robot-locomotion-sim-eval/SKILL.md) |
 
 ## 遥操作与示教数据
 
