@@ -12,6 +12,7 @@
 | 每个 Pod 能访问哪些设备、收到哪些 DDS 消息？ | [Pod 部署与环境隔离](robot-ros2-pod-deployment/SKILL.md) |
 | 板端服务已受理命令，反馈在哪一层中断？ | [嵌入式与 MCU 联调](robot-embedded-bringup/SKILL.md) |
 | 什么证据能确认停稳，复位后如何防止旧指令引起运动？ | [安全策略与防护验证](robot-safety-policy/SKILL.md) |
+| 外壳静态装得下，多个关节一起运动时，哪两处表面最先靠近？ | [运动外壳间隙审查](robot-shell-clearance/SKILL.md) |
 
 ## 感知、标定与导航
 
@@ -32,9 +33,11 @@
 | 要回答的问题 | Skill |
 | --- | --- |
 | 哪个抓取候选既能接近，又能带着物体撤离？ | [抓取候选选优](robot-grasp-selection/SKILL.md) |
+| 商品换包装或换到更窄的货位后，原有抓取能力还能复用到什么范围？ | [新品与包装变更准入](robot-item-onboarding/SKILL.md) |
 | 路点均达标，控制器插值后的速度或加速度是否超限？ | [轨迹定时与插值](robot-trajectory-retiming/SKILL.md) |
 | 策略选线后任务仍失败，偏差始于规划、跟踪还是接触？ | [运动控制与强化学习验证](robot-motion-validation/SKILL.md) |
 | 仿真松爪后，物体确实得到支撑，还是被残留约束固定在原位？ | [接触任务仿真验收](robot-sim-contact-validation/SKILL.md) |
+| 预览是否在本次仿真结束前就显示了新画面，开启渲染会不会改变结果？ | [仿真实时预览验证](robot-simulation-preview/SKILL.md) |
 | 人形机器人能否在整段试验中保持站立，并跟随指定速度行走和转向？ | [人形步态仿真评测](robot-locomotion-sim-eval/SKILL.md) |
 
 ## 遥操作与示教数据
@@ -73,3 +76,10 @@
 | --- | --- |
 | 两种 Agent 工作流通过率相同，各自解决了哪些任务，每个成功任务花了多少成本？ | [Agent 工作流配对评测](agent-harness-comparison/SKILL.md) |
 | 怎么把一个技术问题做成小实验，把真实错答变成复习卡，下次从断点继续学？ | [技术学习实验与复习卡](technical-study-lab/SKILL.md) |
+
+## 交互工具与离线归档
+
+| 要回答的问题 | Skill |
+| --- | --- |
+| 交互应用如何从暂停前的阶段恢复，并在重启后丢弃旧回调？ | [暂停、恢复与重启](interactive-run-lifecycle/SKILL.md) |
+| 评测站点离线后，还有哪些试验明细和机位视频能从看板点开？ | [离线评测归档核验](offline-evaluation-archive/SKILL.md) |

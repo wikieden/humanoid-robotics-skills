@@ -12,6 +12,7 @@ Choose a skill by the engineering question at hand. A single investigation may s
 | Which devices and DDS traffic can each Pod access? | [Pod deployment](robot-ros2-pod-deployment/SKILL.md) |
 | Where did a command or acknowledgment stop between Linux and the MCU? | [Embedded bring-up](robot-embedded-bringup/SKILL.md) |
 | What establishes standstill, and what prevents motion after reset? | [Physical safeguards](robot-safety-policy/SKILL.md) |
+| A new cover fits at rest. Which two surfaces come closest when its joints move together? | [Moving shell clearance review](robot-shell-clearance/SKILL.md) |
 
 ## Perception, calibration, and navigation
 
@@ -32,9 +33,11 @@ Choose a skill by the engineering question at hand. A single investigation may s
 | Engineering question | Skill |
 | --- | --- |
 | Which grasp permits both approach and retreat with the object? | [Grasp selection](robot-grasp-selection/SKILL.md) |
+| Can an approved picking capability handle a packaging change or a tighter shelf slot? | [Item and packaging qualification](robot-item-onboarding/SKILL.md) |
 | Does the controller exceed a limit between valid waypoints? | [Trajectory retiming](robot-trajectory-retiming/SKILL.md) |
 | Did the task fail at goal selection, planning, tracking, or contact? | [Motion validation](robot-motion-validation/SKILL.md) |
 | Did the simulated object stay supported after release, or did an attachment or scoring shortcut keep it in place? | [Contact task simulation](robot-sim-contact-validation/SKILL.md) |
+| Did the preview show this run before it finished, and did rendering affect the result? | [Live simulation preview verification](robot-simulation-preview/SKILL.md) |
 | Can the humanoid follow the commanded velocity and stay upright across a full trial? | [Locomotion simulation evaluation](robot-locomotion-sim-eval/SKILL.md) |
 
 ## Teleoperation and demonstration data
@@ -73,3 +76,10 @@ Choose a skill by the engineering question at hand. A single investigation may s
 | --- | --- |
 | Two agent workflows have the same pass rate. Which tasks did each solve, and at what cost? | [Paired agent harness evaluation](agent-harness-comparison/SKILL.md) |
 | How can a learner test one technical claim, review a mistake, and resume at the next unanswered question? | [Technical study labs and review cards](technical-study-lab/SKILL.md) |
+
+## Interactive tools and offline archives
+
+| Engineering question | Skill |
+| --- | --- |
+| How can an interactive session resume in the right phase and ignore callbacks from an earlier run? | [Pause, resume and restart](interactive-run-lifecycle/SKILL.md) |
+| Which evaluation trials, details and camera views can a reader still open after going offline? | [Offline evaluation archive verification](offline-evaluation-archive/SKILL.md) |
