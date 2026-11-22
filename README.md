@@ -2,7 +2,7 @@
 
 English · [简体中文](README.zh-CN.md)
 
-A collection of English-language agent skills for engineers working on humanoid and mobile manipulation robots. Each skill is a Markdown workflow for a specific engineering decision, from tracing a reversed gripper command to deciding whether a new robot policy should replace its baseline.
+A collection of 23 English-language agent skills for engineers working on humanoid and mobile manipulation robots. Each skill is a Markdown workflow for a specific engineering decision, from tracing a reversed gripper command to deciding whether a new robot policy should replace its baseline.
 
 ## Use a skill
 
@@ -14,22 +14,16 @@ The workflows can also be read directly by a human reviewer. To use an agent tha
 
 ## Choose a workflow
 
-| Engineering question | Skill |
-| --- | --- |
-| If perception restarts while the robot is reaching, what keeps it balanced and who owns the arm commands? | [Humanoid ROS 2 architecture design and review](skills/robot-ros2-architecture/SKILL.md) |
-| Which devices and ROS 2 traffic can each Pod access, and what happens to queued commands when a Pod is replaced? | [ROS 2 Pod deployment and environment isolation](skills/robot-ros2-pod-deployment/SKILL.md) |
-| The board accepted a command. Where did feedback stop? | [Embedded Linux and MCU bring-up](skills/robot-embedded-bringup/SKILL.md) |
-| Which stage reversed the operator's gripper or arm input? | [Dual-arm teleoperation](skills/robot-teleop-bringup/SKILL.md) |
-| Which recordings can the training loader use, and what does the split test? | [Episode and dataset audit](skills/robot-episode-audit/SKILL.md) |
-| Which actions came from an operator during a takeover? | [Expert action label audit](skills/robot-takeover-audit/SKILL.md) |
-| Should this failure lead to better data, a policy update, or an execution fix? | [VLA, WAM, and recursive self-improvement training](skills/robot-policy-training/SKILL.md) |
-| Can the controller receive usable action chunks in time? | [Policy evaluation](skills/robot-policy-eval/SKILL.md) |
-| Why does a stationary target shift when the camera mount turns? | [Camera-to-robot calibration](skills/robot-sensor-calibration/SKILL.md) |
-| Is the grasp target wrong in the image, in depth, or in the robot frame? | [RGB-D pose validation](skills/robot-rgbd-pose/SKILL.md) |
-| Where did localization, planning, tracking, or base feedback first diverge? | [Navigation replay](skills/robot-navigation-replay/SKILL.md) |
-| Did the policy choose a poor trajectory, or did execution lose contact? | [Motion control and RL validation](skills/robot-motion-validation/SKILL.md) |
-| Which service reported completion, and what did the device actually do? | [Cloud-to-robot task tracing](skills/robot-task-trace/SKILL.md) |
-| What evidence establishes standstill and prevents old commands from restarting motion? | [Robot safety policy and safeguard verification](skills/robot-safety-policy/SKILL.md) |
+Browse the [skill index](skills/README.md) to choose a workflow by engineering question.
+
+| Category | Skills |
+| --- | ---: |
+| [Systems, deployment, and safety](skills/README.md#systems-deployment-and-safety) | 4 |
+| [Perception, calibration, and navigation](skills/README.md#perception-calibration-and-navigation) | 4 |
+| [Grasping, planning, and motion control](skills/README.md#grasping-planning-and-motion-control) | 3 |
+| [Teleoperation and demonstration data](skills/README.md#teleoperation-and-demonstration-data) | 4 |
+| [Policy training and evaluation](skills/README.md#policy-training-and-evaluation) | 2 |
+| [Robot platform and cloud services](skills/README.md#robot-platform-and-cloud-services) | 6 |
 
 ## Try an offline example
 
