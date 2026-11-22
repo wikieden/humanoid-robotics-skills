@@ -39,6 +39,7 @@ Choose a skill by the engineering question at hand. A single investigation may s
 | Did the simulated object stay supported after release, or did an attachment or scoring shortcut keep it in place? | [Contact task simulation](robot-sim-contact-validation/SKILL.md) |
 | Did the preview show this run before it finished, and did rendering affect the result? | [Live simulation preview verification](robot-simulation-preview/SKILL.md) |
 | Can the humanoid follow the commanded velocity and stay upright across a full trial? | [Locomotion simulation evaluation](robot-locomotion-sim-eval/SKILL.md) |
+| Does reflecting a policy sample produce the expected motion of the opposite limb? | [Left-right policy symmetry](robot-policy-symmetry/SKILL.md) |
 
 ## Teleoperation and demonstration data
 
@@ -56,6 +57,7 @@ Choose a skill by the engineering question at hand. A single investigation may s
 | --- | --- |
 | Does this failure call for new supervision, a parameter update, or an execution fix? | [Policy training and RSI](robot-policy-training/SKILL.md) |
 | Which precision fits the memory budget, resumes correctly and reloads for inference? | [Training precision and checkpoint comparison](robot-training-precision/SKILL.md) |
+| How many GPU-hours and calendar days will the planned multimodal training run require? | [Robot training compute sizing](robot-training-capacity/SKILL.md) |
 | Can the checkpoint supply usable actions on time, and does it improve task outcomes? | [Policy evaluation](robot-policy-eval/SKILL.md) |
 
 ## Robot platform and cloud services
@@ -64,6 +66,7 @@ Choose a skill by the engineering question at hand. A single investigation may s
 | --- | --- |
 | Can the same device recover its identity and connections after a retry? | [Device onboarding](robot-device-onboarding/SKILL.md) |
 | Which release and permissions did this device session actually use? | [Agent binding](robot-agent-binding-review/SKILL.md) |
+| Will both the rule router and the model fallback recognize a new robot intent? | [Intent routing and catalog regression](robot-intent-routing/SKILL.md) |
 | When a speaker moves to a second device, which knowledge, preferences and conversation fields may follow? | [Shared robot knowledge and session memory](robot-agent-context/SKILL.md) |
 | How should the protocol handle a duplicated or late command? | [Task protocol](robot-task-protocol/SKILL.md) |
 | For this particular run, where did the earliest receipt go missing? | [Task tracing](robot-task-trace/SKILL.md) |
@@ -83,3 +86,10 @@ Choose a skill by the engineering question at hand. A single investigation may s
 | --- | --- |
 | How can an interactive session resume in the right phase and ignore callbacks from an earlier run? | [Pause, resume and restart](interactive-run-lifecycle/SKILL.md) |
 | Which evaluation trials, details and camera views can a reader still open after going offline? | [Offline evaluation archive verification](offline-evaluation-archive/SKILL.md) |
+
+## Skill distribution and technical publishing
+
+| Engineering question | Skill |
+| --- | --- |
+| Can several agent hosts discover the same skill and its resources while preserving user-installed packages? | [Distributing a skill collection](skill-distribution/SKILL.md) |
+| Which translations, exports and bundles still carry an outdated technical claim? | [Synchronizing document variants](document-variant-sync/SKILL.md) |

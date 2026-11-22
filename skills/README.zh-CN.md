@@ -39,6 +39,7 @@
 | 仿真松爪后，物体确实得到支撑，还是被残留约束固定在原位？ | [接触任务仿真验收](robot-sim-contact-validation/SKILL.md) |
 | 预览是否在本次仿真结束前就显示了新画面，开启渲染会不会改变结果？ | [仿真实时预览验证](robot-simulation-preview/SKILL.md) |
 | 人形机器人能否在整段试验中保持站立，并跟随指定速度行走和转向？ | [人形步态仿真评测](robot-locomotion-sim-eval/SKILL.md) |
+| 把策略样本左右镜像后，另一侧肢体是否真的朝预期方向运动？ | [机器人策略左右镜像验证](robot-policy-symmetry/SKILL.md) |
 
 ## 遥操作与示教数据
 
@@ -56,6 +57,7 @@
 | --- | --- |
 | 这次失败该补数据、更新参数，还是修执行逻辑？ | [策略训练与递归自改进](robot-policy-training/SKILL.md) |
 | 哪种训练精度能装进显存、正确续训，并在新进程中重载推理？ | [训练精度与检查点对照](robot-training-precision/SKILL.md) |
+| 这批多机位训练数据需要多少 GPU 卡时，实际排期要多久？ | [机器人训练算力估算](robot-training-capacity/SKILL.md) |
 | 新权重能否按时供给可执行动作，任务表现是否改善？ | [VLA / WAM 策略评测](robot-policy-eval/SKILL.md) |
 
 ## 机器人平台与端云服务
@@ -64,6 +66,7 @@
 | --- | --- |
 | 激活响应丢失或设备换网后，如何确认同一台设备恢复服务？ | [设备接入验收](robot-device-onboarding/SKILL.md) |
 | 这次设备会话实际使用了哪个 Agent 版本和哪些权限？ | [设备与 Agent 版本绑定](robot-agent-binding-review/SKILL.md) |
+| 新增机器人意图后，关键词规则和模型兜底两条路径都能正确处理吗？ | [机器人意图路由与回归验证](robot-intent-routing/SKILL.md) |
 | 用户换到另一台机器人时，哪些知识、偏好和对话内容可以带过去？ | [机器人共享知识与会话记忆](robot-agent-context/SKILL.md) |
 | “下一站”重发或迟到时，协议应如何推进任务状态？ | [长任务协议与回执验收](robot-task-protocol/SKILL.md) |
 | 这次任务已在界面显示完成，日志里第一处缺失的回执在哪里？ | [端云任务追踪](robot-task-trace/SKILL.md) |
@@ -83,3 +86,10 @@
 | --- | --- |
 | 交互应用如何从暂停前的阶段恢复，并在重启后丢弃旧回调？ | [暂停、恢复与重启](interactive-run-lifecycle/SKILL.md) |
 | 评测站点离线后，还有哪些试验明细和机位视频能从看板点开？ | [离线评测归档核验](offline-evaluation-archive/SKILL.md) |
+
+## 技能分发与技术文档发布
+
+| 要回答的问题 | Skill |
+| --- | --- |
+| 多种 Agent 助手能否发现同一套 skill 及其资源，同时保留用户已有的同名文件？ | [跨助手技能分发](skill-distribution/SKILL.md) |
+| 技术结论更正后，哪些译本、导出文件和交付压缩包里还留着旧说法？ | [技术文档多版本同步](document-variant-sync/SKILL.md) |
