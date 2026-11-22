@@ -21,4 +21,10 @@ Use a fresh world reset and let the live controller drive the simulated base. Ch
 
 Repeat the same waypoint from the same initial pose with an empty route and with an obstacle in the nominal path. Record the obstacle in both sensor data and the collision world. Check final position and heading against world truth in a known map-to-world alignment, plus collisions, stop reasons, elapsed simulation time, and the navigation action result. A replay can reproduce planning on recorded inputs; this experiment also measures the motion induced by new commands.
 
+## Trace a disappearing near-field obstacle
+
+Follow one obstacle from its sensor returns through the rolling 3D voxel map, height or traversability projection, and the specific 2D costmap layer consumed by the local planner. Record source capture times and map update times separately. A timer can keep publishing grids after a sensor stops delivering fresh samples. Check the obstacle against the robot's swept height and footprint. An overhanging edge can miss a horizontal laser scan.
+
+Compare three controlled intervals: an obstacle is visible; it is removed and a valid ray observes the space behind it; the obstacle is present again but the observing sensor drops out. Record cells marked, cleared by observation, aged out, or left unknown. Check which layer changed the final cost and how the controller handled stale coverage. A missing return or expired voxel alone cannot establish free space. If the static map or floor is misaligned, use [SLAM Map and Relocalization Acceptance](../robot-map-relocalization/SKILL.md).
+
 **Deliverable.** Give the recording interval or world reset, map version, launch configuration, and reproduction entry point. Identify the first abnormal signal, supporting evidence, and missing observations. For repeated goal attempts, give successes out of total attempts, goal tolerance, and failure categories.

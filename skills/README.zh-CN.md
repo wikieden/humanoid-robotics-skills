@@ -19,8 +19,13 @@
 | --- | --- |
 | 相机支架转动时，静止目标在基座坐标系里也跟着移动吗？ | [传感器外参标定](robot-sensor-calibration/SKILL.md) |
 | 抓取点偏了，误差最早出现在掩码、深度还是坐标变换？ | [RGB-D 位姿验证](robot-rgbd-pose/SKILL.md) |
+| 机器人认对了物体，但关键区域被遮挡，它凭什么判断物体状态？ | [多模态目标与状态判断](robot-multimodal-grounding/SKILL.md) |
 | 只看到部分表面时，数据足以区分两个候选朝向吗？ | [点云配准与朝向消歧](robot-object-registration/SKILL.md) |
+| 长走廊里哪些方向的位姿估不准？前端配准和后端回环约束怎么设计？ | [激光 SLAM 算法开发](robot-slam-development/SKILL.md) |
+| 障碍物移走或传感器掉帧时，滚动地图如何更新占据状态和通行性？ | [局部占据地图与通行性算法开发](robot-local-costmap-development/SKILL.md) |
+| 如何搜索可通行路径、绕开局部障碍，并给底盘或步态控制器下发可执行的参考？ | [导航规划与路径跟踪算法开发](robot-navigation-planner-development/SKILL.md) |
 | 导航未到点，定位、规划、跟踪和底盘反馈中哪一步先出现异常？ | [建图与导航回放](robot-navigation-replay/SKILL.md) |
+| 地图保存并重载后，机器人能否从新起点在正确楼层重新定位？ | [SLAM 地图与重定位验收](robot-map-relocalization/SKILL.md) |
 
 ## 抓取、规划与运动控制
 
@@ -38,6 +43,7 @@
 | --- | --- |
 | 接管之后，哪位操作员的指令还会被执行端接受？ | [遥操作会话与控制权](robot-teleop-session/SKILL.md) |
 | 操作员扣左侧扳机，夹爪或机械臂的动作在哪一层反了？ | [遥操作输入映射](robot-teleop-bringup/SKILL.md) |
+| 要训练这个动作，第一视角视频、手持工具和机器人遥操作各能提供哪些标签？ | [示教采集方案设计](robot-capture-design/SKILL.md) |
 | 转换后的轨迹能否训练，当前划分能检验哪种泛化能力？ | [示教轨迹与数据集验收](robot-episode-audit/SKILL.md) |
 | 哪些连续动作窗口确实来自人工纠正，可以作为专家标签？ | [人工接管标签验收](robot-takeover-audit/SKILL.md) |
 
@@ -46,6 +52,7 @@
 | 要回答的问题 | Skill |
 | --- | --- |
 | 这次失败该补数据、更新参数，还是修执行逻辑？ | [策略训练与递归自改进](robot-policy-training/SKILL.md) |
+| 哪种训练精度能装进显存、正确续训，并在新进程中重载推理？ | [训练精度与检查点对照](robot-training-precision/SKILL.md) |
 | 新权重能否按时供给可执行动作，任务表现是否改善？ | [VLA / WAM 策略评测](robot-policy-eval/SKILL.md) |
 
 ## 机器人平台与端云服务
@@ -54,7 +61,15 @@
 | --- | --- |
 | 激活响应丢失或设备换网后，如何确认同一台设备恢复服务？ | [设备接入验收](robot-device-onboarding/SKILL.md) |
 | 这次设备会话实际使用了哪个 Agent 版本和哪些权限？ | [设备与 Agent 版本绑定](robot-agent-binding-review/SKILL.md) |
+| 用户换到另一台机器人时，哪些知识、偏好和对话内容可以带过去？ | [机器人共享知识与会话记忆](robot-agent-context/SKILL.md) |
 | “下一站”重发或迟到时，协议应如何推进任务状态？ | [长任务协议与回执验收](robot-task-protocol/SKILL.md) |
 | 这次任务已在界面显示完成，日志里第一处缺失的回执在哪里？ | [端云任务追踪](robot-task-trace/SKILL.md) |
 | 设备是播完了、被打断了，还是断线重连后又播了一次？ | [语音打断与播报验收](robot-voice-playback/SKILL.md) |
 | 动作换版或撤回后，哪些租户和机器人仍引用旧版？ | [动作资产发布与撤回](robot-action-release/SKILL.md) |
+
+## 通用工程方法：Agent 评测与技术学习
+
+| 要回答的问题 | Skill |
+| --- | --- |
+| 两种 Agent 工作流通过率相同，各自解决了哪些任务，每个成功任务花了多少成本？ | [Agent 工作流配对评测](agent-harness-comparison/SKILL.md) |
+| 怎么把一个技术问题做成小实验，把真实错答变成复习卡，下次从断点继续学？ | [技术学习实验与复习卡](technical-study-lab/SKILL.md) |
