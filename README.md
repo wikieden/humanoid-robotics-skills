@@ -16,6 +16,8 @@ The workflows can also be read directly by a human reviewer. To use an agent tha
 
 | Engineering question | Skill |
 | --- | --- |
+| If perception restarts while the robot is reaching, what keeps it balanced and who owns the arm commands? | [Humanoid ROS 2 architecture design and review](skills/robot-ros2-architecture/SKILL.md) |
+| Which devices and ROS 2 traffic can each Pod access, and what happens to queued commands when a Pod is replaced? | [ROS 2 Pod deployment and environment isolation](skills/robot-ros2-pod-deployment/SKILL.md) |
 | The board accepted a command. Where did feedback stop? | [Embedded Linux and MCU bring-up](skills/robot-embedded-bringup/SKILL.md) |
 | Which stage reversed the operator's gripper or arm input? | [Dual-arm teleoperation](skills/robot-teleop-bringup/SKILL.md) |
 | Which recordings can the training loader use, and what does the split test? | [Episode and dataset audit](skills/robot-episode-audit/SKILL.md) |

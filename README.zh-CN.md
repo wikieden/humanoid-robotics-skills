@@ -2,7 +2,7 @@
 
 [English](README.md) · 简体中文
 
-这套技能集面向开发人形机器人和移动操作机器人的工程师。12 个英文 skill 各用一份 Markdown 文档回答一个具体的工程问题，从“夹爪指令在哪一层反了”到“新策略是否值得替换基线”。你可以让 AI 编程助手按步骤排查，也可以在工程评审时直接查阅。
+这套技能集面向开发人形机器人和移动操作机器人的工程师。14 个英文 skill 各用一份 Markdown 文档回答一个具体的工程问题，从“夹爪指令在哪一层反了”到“新策略是否值得替换基线”。你可以让 AI 编程助手按步骤排查，也可以在工程评审时直接查阅。
 
 ## 如何使用
 
@@ -16,6 +16,8 @@
 
 | 你要解决的问题 | 对应 skill |
 | --- | --- |
+| 机器人伸手时感知进程重启，谁负责保持平衡，谁仍有权向机械臂下发指令？ | [人形机器人 ROS 2 架构设计与审查](skills/robot-ros2-architecture/SKILL.md) |
+| 每个 Pod 能访问哪些设备和 ROS 2 通信流？替换 Pod 后，队列里的旧指令会怎样？ | [ROS 2 Pod 部署与环境隔离](skills/robot-ros2-pod-deployment/SKILL.md) |
 | 板端已受理命令，反馈在哪一层中断了？ | [嵌入式 Linux 与 MCU 联调](skills/robot-embedded-bringup/SKILL.md) |
 | 操作员扣动左手扳机，夹爪或机械臂的动作为什么反了？ | [双臂遥操作与映射验证](skills/robot-teleop-bringup/SKILL.md) |
 | 哪些录制能被训练加载器读取？当前数据划分能检验哪种泛化能力？ | [遥操轨迹与训练集验收](skills/robot-episode-audit/SKILL.md) |
