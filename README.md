@@ -1,5 +1,7 @@
 # Humanoid Robotics Skills
 
+English · [简体中文](README.zh-CN.md)
+
 A collection of English-language agent skills for engineers working on humanoid and mobile manipulation robots. Each skill is a Markdown workflow for a specific engineering decision, from tracing a reversed gripper command to deciding whether a new robot policy should replace its baseline.
 
 ## Use a skill
