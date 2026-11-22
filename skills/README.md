@@ -2,7 +2,7 @@
 
 English · [简体中文](README.zh-CN.md)
 
-Start with the [robot development entry skill](robot-dev-skills/SKILL.md) or choose one of the 53 specialists below. The collection contains 54 installable skills. A new hardware observation, failure case or worked example belongs with the workflow it improves. Add a separate skill when a different question requires its own evidence and deliverable.
+Start with the [robot development entry skill](robot-dev-skills/SKILL.md) or choose one of the 56 specialists below. The collection contains 57 installable skills. A new hardware observation, failure case or worked example belongs with the workflow it improves. Add a separate skill when a different question requires its own evidence and deliverable.
 
 **Simulation and replay.** Build an [algorithm test environment][scene-build], trace a [missed waypoint][nav-replay], verify [contact after release][contact], compare [branches from a snapshot][restore], check [live preview timing][preview], or score [gait tracking and falls][gait]. Each workflow also appears in its engineering category below.
 
@@ -15,11 +15,11 @@ Start with the [robot development entry skill](robot-dev-skills/SKILL.md) or cho
 
 ### Install one skill
 
-Copy the selected folder with its `SKILL.md` and its own `references/` directory when present. The first six files support the entry skill or a named branch. Read the file needed for the task. The last six are optional reading or worked examples. The other 42 packages contain their entire workflow in `SKILL.md`.
+Copy the selected folder with its `SKILL.md` and its own `references/` directory when present. The first six files support the entry skill or a named branch. Read the file needed for the task. The last six are optional reading or worked examples. The other 45 packages contain their entire workflow in `SKILL.md`.
 
 | Bundled file | When to use it |
 | --- | --- |
-| [robot-dev-skills/references/workflows.md](robot-dev-skills/references/workflows.md) | The entry skill uses this directory to select one of the 53 specialists before reading its guide. |
+| [robot-dev-skills/references/workflows.md](robot-dev-skills/references/workflows.md) | The entry skill uses this directory to select one of the 56 specialists before reading its guide. |
 | [robot-episode-audit/references/takeover-labels.md](robot-episode-audit/references/takeover-labels.md) | Label human takeovers and select consecutive expert-action windows. |
 | [robot-grasp-selection/references/grasp-algorithms.md](robot-grasp-selection/references/grasp-algorithms.md) | Choose an algorithm when the required output might be an object pose, a gripper pose or an action sequence. |
 | [robot-rgbd-pose/references/object-registration.md](robot-rgbd-pose/references/object-registration.md) | Register an existing metric cloud and resolve or report pose ambiguity. |
@@ -105,6 +105,9 @@ Four former skills are now references in their parent packages. Refresh the enti
 | Engineering question | Skill |
 | --- | --- |
 | Does this failure call for new supervision, a parameter update, or an execution fix? | [Policy training and RSI](robot-policy-training/SKILL.md) |
+| Which rollout stage actually caused the failure, and would a matched recovery branch distinguish it from an upstream change? | [RSI failure attribution](robot-rsi-failure-attribution/SKILL.md) |
+| Which learner states should receive expert queries or takeover corrections, and which targets can those records support? | [RSI correction data design](robot-rsi-correction-design/SKILL.md) |
+| Can this RSI generation become the next parent under retention and independent acceptance rules? | [RSI candidate promotion and frozen acceptance](robot-rsi-candidate-promotion/SKILL.md) |
 | Which precision fits the memory budget, resumes correctly and reloads for inference? | [Training precision and checkpoint comparison](robot-training-precision/SKILL.md) |
 | How many GPU-hours and calendar days will the planned multimodal training run require? | [Robot training compute sizing](robot-training-capacity/SKILL.md) |
 | Can a checkpoint supply usable actions on time, and which policy wins on matched trials? | [Policy evaluation](robot-policy-eval/SKILL.md) |

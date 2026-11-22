@@ -2,7 +2,7 @@
 
 [English](README.md) · 简体中文
 
-从[机器人开发主入口](robot-dev-skills/SKILL.md)描述任务，或从下方 53 个专项中直接选择。整套共 54 个 skill。新的硬件观测、故障案例或算例，放入能用到它的现有流程。遇到需要不同输入证据、给出不同工程结论的问题，再建独立 skill。
+从[机器人开发主入口](robot-dev-skills/SKILL.md)描述任务，或从下方 56 个专项中直接选择。整套共 57 个 skill。新的硬件观测、故障案例或算例，放入能用到它的现有流程。遇到需要不同输入证据、给出不同工程结论的问题，再建独立 skill。
 
 **仿真与回放速查。** 从[搭建算法测试环境][scene-build]开始，或直接进入[导航未到点回放][nav-replay]、[释放后的接触验证][contact]、[快照恢复与分支对照][restore]、[实时预览验证][preview]或[步态跟踪与摔倒评测][gait]。下方分类表中可以找到同一入口。
 
@@ -15,11 +15,11 @@
 
 ### 单独安装一个 skill
 
-复制所选 skill 的完整目录，保留 `SKILL.md` 和同包的 `references/`（如有）。下表前六项是主入口或对应分支需要的资料，使用时按需读取。后六项是可选阅读或离线算例。其余 42 个包的全部说明都在各自的 `SKILL.md`。
+复制所选 skill 的完整目录，保留 `SKILL.md` 和同包的 `references/`（如有）。下表前六项是主入口或对应分支需要的资料，使用时按需读取。后六项是可选阅读或离线算例。其余 45 个包的全部说明都在各自的 `SKILL.md`。
 
 | 包内资料 | 何时使用 |
 | --- | --- |
-| [robot-dev-skills/references/workflows.md](robot-dev-skills/references/workflows.md) | 主入口用它按问题查找 53 个专项，然后只读取选中的指南。 |
+| [robot-dev-skills/references/workflows.md](robot-dev-skills/references/workflows.md) | 主入口用它按问题查找 56 个专项，然后只读取选中的指南。 |
 | [robot-episode-audit/references/takeover-labels.md](robot-episode-audit/references/takeover-labels.md) | 判定接管动作标签和连续专家动作窗口。 |
 | [robot-grasp-selection/references/grasp-algorithms.md](robot-grasp-selection/references/grasp-algorithms.md) | 在物体位姿、夹爪位姿和动作序列之间选算法路线。 |
 | [robot-rgbd-pose/references/object-registration.md](robot-rgbd-pose/references/object-registration.md) | 从已有公制点云做配准，判定朝向是否可区分。 |
@@ -105,6 +105,9 @@
 | 要回答的问题 | Skill |
 | --- | --- |
 | 这次失败该补数据、更新参数，还是修执行逻辑？ | [策略训练与递归自改进](robot-policy-training/SKILL.md) |
+| 末段失败增多，怎样用阶段分母和同状态分支定位原因？ | [RSI 失败归因](robot-rsi-failure-attribution/SKILL.md) |
+| 纠错预算有限，哪些失败状态值得请专家标注或接管，能生成什么监督？ | [RSI 纠正数据设计](robot-rsi-correction-design/SKILL.md) |
+| 候选在新任务有收益，但旧任务退步或验收数据已曝光，能否继承为下一轮父版本？ | [RSI 候选晋级与冻结验收](robot-rsi-candidate-promotion/SKILL.md) |
 | 哪种训练精度能装进显存、正确续训，并在新进程中重载推理？ | [训练精度与检查点对照](robot-training-precision/SKILL.md) |
 | 这批多机位训练数据需要多少 GPU 卡时，实际排期要多久？ | [机器人训练算力估算](robot-training-capacity/SKILL.md) |
 | 新权重能否按时供给可执行动作？在同一组任务条件下哪个策略表现更好？ | [机器人策略对照评测](robot-policy-eval/SKILL.md) |

@@ -61,7 +61,10 @@ Choose a package by the engineering question. The package name locates its `SKIL
 
 | Question | Package |
 | --- | --- |
-| Does this failure call for new supervision, a parameter update, or an execution fix? | `robot-policy-training` |
+| Given mixed feedback, which update should we make this round: train parameters, collect supervision, or repair execution? | `robot-policy-training` |
+| Which rollout stage actually caused the failure, and would a matched recovery branch distinguish it from an upstream change? | `robot-rsi-failure-attribution` |
+| Which learner states should receive expert queries or takeover corrections, and which targets can those records support? | `robot-rsi-correction-design` |
+| Can this RSI generation become the next parent under retention and independent acceptance rules? | `robot-rsi-candidate-promotion` |
 | Which precision fits the memory budget, resumes correctly and reloads for inference? | `robot-training-precision` |
 | How many GPU-hours and calendar days will the planned multimodal training run require? | `robot-training-capacity` |
 | Can a checkpoint supply usable actions on time, and which policy wins on matched trials? | `robot-policy-eval` |

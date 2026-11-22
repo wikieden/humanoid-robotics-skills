@@ -19,6 +19,10 @@ Start with one decision the experiment must support. An example is whether condi
 
 For recent approaches to paired corrections, latent subgoals, and world-model rollouts, consult the [research notes](references/training-methods.md) when the observations and supervision match.
 
+For a full RSI round, record what persists from parent to child and who chose the update. When a stage needs a separate decision, use [failure attribution (optional)](../robot-rsi-failure-attribution/SKILL.md) to identify the intervention, [correction design (optional)](../robot-rsi-correction-design/SKILL.md) to specify new labels, or [candidate promotion (optional)](../robot-rsi-candidate-promotion/SKILL.md) to decide inheritance and sealed acceptance.
+
+**Test a WAM for future leakage.** For a policy that predicts its visual subgoal, fork a raw held-out episode at decision time `t`. Keep the permitted history, instruction, declared goal and noise draws fixed. Replace observations recorded after `t` in one copy. Rebuild both inference requests from raw data, including alignment, feature caches and normalization. Compare the tensors available to the exported policy and its action at `t` within a declared tolerance. A difference traces leakage or uncontrolled state. Test sensitivity by deliberately feeding a future-dependent feature through the same comparison. An unchanged action alone can hide a changed input. Trace each input to data available by decision time and try replacements that cross feature thresholds. Passing a finite set of forks only bounds the tested cases. Keep a separately labelled observed-future oracle for offline diagnosis. [Latent world-action policy and predicted subgoals](https://arxiv.org/abs/2606.15768v2)
+
 ## Prepare one reproducible run
 
 1. **Freeze the split before windowing.** Deduplicate complete source recordings and group related sessions, objects, or layouts according to the generalization claim. Keep development feedback and candidate selection separate from the sealed acceptance set. Trace each source to its allowed use. A test rollout used to change a prompt, recovery rule, or checkpoint choice becomes development evidence.

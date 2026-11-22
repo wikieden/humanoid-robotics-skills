@@ -15,6 +15,10 @@ Declare the platform command interface first. A differential base accepts forwar
 2. Add A* using a lower bound in the same units as edge cost. For length plus nonnegative penalties, minimum cost per metre times straight-line distance is admissible. Compare feasibility and total cost with Dijkstra on the same graph. Equal-cost paths can contain different waypoints. Record node expansions and solve time. [Nav2 NavFn planner](https://docs.nav2.org/rolling/configuration_and_development/configuration_guide/planners_plugins/configuring_navfn/)
 3. Choose a heading-aware lattice or Hybrid A* if orientation, a minimum turning radius, or reverse motion changes reachability. Collision-check the swept footprint along motion primitives, including in-place turns when the model supports them. Test an opening that admits the robot at only one orientation.
 
+**Closed-set regression.** For optimal graph A* with nonnegative costs, use `h(goal)=0` and finish when the goal is removed from the minimum-`g+h` queue with its current best cost. Permanently closing expanded states requires a consistent heuristic as a general guarantee. Check `h(u) ≤ cost(u,v) + h(v)` on every directed edge, or reopen an expanded state when a cheaper path reaches it if the heuristic is only known to be admissible. [A* search with inconsistent heuristics](https://ijcai.org/proceedings/2009/111)
+
+On the directed edges `S→A:3, S→B:1, B→A:1, A→G:3`, set `h(B)=4` and all other estimates to zero. Each estimate is a lower bound, but the edge B→A violates consistency. A permanent closed set returns cost 6. Reopening A yields S→B→A→G at cost 5, matching Dijkstra. Keep this graph alongside grid cases when changing the queue or heuristic.
+
 ## Replan around a local obstacle
 
 Match the current pose to forward progress on the route. At a self-crossing, use heading and prior arc length to disambiguate the branch. Search a bounded region for a detour to a reachable point downstream. Allow a wider or global search when that region has no solution. Report a blocked route if neither search succeeds.
