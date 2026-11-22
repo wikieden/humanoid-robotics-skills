@@ -2,7 +2,7 @@
 
 [English](README.md) · 简体中文
 
-按要解决的工程问题，从 53 个 skill 中选择入口。新的硬件观测、故障案例或算例，放入能用到它的现有流程。遇到需要不同输入证据、给出不同工程结论的问题，再建独立 skill。
+从[机器人开发主入口](robot-dev-skills/SKILL.md)描述任务，或从下方 53 个专项中直接选择。整套共 54 个 skill。新的硬件观测、故障案例或算例，放入能用到它的现有流程。遇到需要不同输入证据、给出不同工程结论的问题，再建独立 skill。
 
 **仿真与回放速查。** 从[搭建算法测试环境][scene-build]开始，或直接进入[导航未到点回放][nav-replay]、[释放后的接触验证][contact]、[快照恢复与分支对照][restore]、[实时预览验证][preview]或[步态跟踪与摔倒评测][gait]。下方分类表中可以找到同一入口。
 
@@ -15,10 +15,11 @@
 
 ### 单独安装一个 skill
 
-复制所选 skill 的完整目录，保留 `SKILL.md` 和同包的 `references/`（如有）。下表前五项是对应分支的操作指南，执行该分支时需要阅读。后六项是可选阅读或离线算例。其余 42 个包的全部说明都在各自的 `SKILL.md`。
+复制所选 skill 的完整目录，保留 `SKILL.md` 和同包的 `references/`（如有）。下表前六项是主入口或对应分支需要的资料，使用时按需读取。后六项是可选阅读或离线算例。其余 42 个包的全部说明都在各自的 `SKILL.md`。
 
 | 包内资料 | 何时使用 |
 | --- | --- |
+| [robot-dev-skills/references/workflows.md](robot-dev-skills/references/workflows.md) | 主入口用它按问题查找 53 个专项，然后只读取选中的指南。 |
 | [robot-episode-audit/references/takeover-labels.md](robot-episode-audit/references/takeover-labels.md) | 判定接管动作标签和连续专家动作窗口。 |
 | [robot-grasp-selection/references/grasp-algorithms.md](robot-grasp-selection/references/grasp-algorithms.md) | 在物体位姿、夹爪位姿和动作序列之间选算法路线。 |
 | [robot-rgbd-pose/references/object-registration.md](robot-rgbd-pose/references/object-registration.md) | 从已有公制点云做配准，判定朝向是否可区分。 |

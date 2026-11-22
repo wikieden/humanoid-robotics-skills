@@ -2,7 +2,32 @@
 
 [English](README.md) · 简体中文
 
-这套技能集包含 53 个英文 skill，其中 46 个面向人形机器人与移动操作机器人开发，另有 7 个通用方法，涵盖 Agent 工作流评测与执行、技术教学、交互应用、离线归档、技能分发和技术文档发布。每份 Markdown 文档回答一个具体的工程问题，从“夹爪指令在哪一层反了”到“新策略是否值得替换基线”。你可以让 AI 编程助手按步骤排查，也可以在工程评审时直接查阅。
+这套技能集包含 1 个主入口和 53 个专项，共 54 个英文 skill。专项中有 46 个面向人形机器人与移动操作机器人开发，另有 7 个通用方法，涵盖 Agent 工作流评测与执行、技术教学、交互应用、离线归档、技能分发和技术文档发布。每份 Markdown 文档回答一个具体的工程问题，从“夹爪指令在哪一层反了”到“新策略是否值得替换基线”。你可以让 AI 编程助手按步骤排查，也可以在工程评审时直接查阅。
+
+## 用一个入口调用整套技能
+
+从仓库根目录运行下面的命令，把主入口链接到 Codex 和 Claude Code 的用户级目录。请将仓库保存在固定位置。两个助手都从同一份本地仓库按需读取专项及其配套资料，读取这些文件无需联网。
+
+```sh
+(
+  set -e
+  entry="$PWD/skills/robot-dev-skills"
+  test -f "$entry/SKILL.md"
+  for skills_dir in "$HOME/.agents/skills" "$HOME/.claude/skills"; do
+    mkdir -p "$skills_dir"
+    target="$skills_dir/robot-dev-skills"
+    if [ -e "$target" ] || [ -L "$target" ]; then
+      printf 'Already present: %s\n' "$target"
+    else
+      ln -s "$entry" "$target"
+    fi
+  done
+)
+```
+
+新开会话后，在 Codex 输入 `$robot-dev-skills 把这段动捕迁到短腿机器人，支撑脚为什么会滑？`，在 Claude Code 输入 `/robot-dev-skills 把这段动捕迁到短腿机器人，支撑脚为什么会滑？`。入口会读取动作重定向指南，再根据你提供的素材处理问题。
+
+也可以按单包装法只复制 `robot-dev-skills/`，连同其中的 `references/workflows.md` 一并保留。入口优先读取同级安装的专项或你指定的本地仓库。缺少本地文件时，可从固定的 GitHub 提交读取所选指南。完全离线且只有入口副本时，它会指出还需要哪个包。
 
 ## 如何使用
 
@@ -18,7 +43,7 @@
 
 新增 7 项流程，覆盖动作资产绑定与重定向、生成式仿真环境搭建、关节反馈恢复、多组件升级、端侧视觉调度、机械臂工作空间回归和连续录包。另有四个旧入口并入现有技能，已安装用户可查阅[迁移表](skills/README.zh-CN.md#已安装用户迁移)。
 
-| 分类 | Skill 数量 |
+| 分类 | 专项 skill 数量 |
 | --- | ---: |
 | [系统架构、部署与安全](skills/README.zh-CN.md#系统架构部署与安全) | 9 |
 | [感知、标定与导航](skills/README.zh-CN.md#感知标定与导航) | 9 |

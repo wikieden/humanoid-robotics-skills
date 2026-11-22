@@ -2,7 +2,32 @@
 
 English · [简体中文](README.zh-CN.md)
 
-This collection contains 53 English-language agent skills. Of these, 46 cover humanoid and mobile manipulation robotics. The other seven cover agent evaluation and execution, technical learning, interactive applications, offline archives, skill distribution and technical publishing. Each skill is a Markdown workflow for a specific engineering decision, from tracing a reversed gripper command to deciding whether a new robot policy should replace its baseline.
+This collection contains 54 English-language agent skills. One entry skill routes to 53 specialists. Of those specialists, 46 cover humanoid and mobile manipulation robotics. The other seven cover agent evaluation and execution, technical learning, interactive applications, offline archives, skill distribution and technical publishing. Each skill is a Markdown workflow for a specific engineering decision, from tracing a reversed gripper command to deciding whether a new robot policy should replace its baseline.
+
+## Use the collection through one entry skill
+
+From the repository root, link the entry skill to the Codex and Claude Code user skill directories. Keep the checkout at a stable path. Both hosts can then read individual specialists and their resources from the same local copy, including offline.
+
+```sh
+(
+  set -e
+  entry="$PWD/skills/robot-dev-skills"
+  test -f "$entry/SKILL.md"
+  for skills_dir in "$HOME/.agents/skills" "$HOME/.claude/skills"; do
+    mkdir -p "$skills_dir"
+    target="$skills_dir/robot-dev-skills"
+    if [ -e "$target" ] || [ -L "$target" ]; then
+      printf 'Already present: %s\n' "$target"
+    else
+      ln -s "$entry" "$target"
+    fi
+  done
+)
+```
+
+Start a new chat. In Codex, enter `$robot-dev-skills My mocap clip skates on a shorter robot. What should I check?` In Claude Code, enter `/robot-dev-skills My mocap clip skates on a shorter robot. What should I check?` The entry skill opens the motion retargeting guide and applies it to the evidence you supply.
+
+You can also copy just the `robot-dev-skills/` package, including `references/workflows.md`. It reads a locally installed specialist or a checkout you identify first. If neither is available, it can read the selected guide from a pinned public GitHub commit. With only the entry package and no network, it identifies the missing package.
 
 ## Use a skill
 
@@ -18,7 +43,7 @@ Browse the [skill index](skills/README.md) to choose a workflow by engineering q
 
 Seven workflows now cover motion retargeting, simulation environment construction, joint feedback recovery, multi-component updates, edge vision scheduling, manipulator workspace regression, and continuous bag recording. For existing installations, the index lists the four retired names and their replacement guides. [Migration table](skills/README.md#existing-installations)
 
-| Category | Skills |
+| Category | Specialist skills |
 | --- | ---: |
 | [Systems, deployment, and safety](skills/README.md#systems-deployment-and-safety) | 9 |
 | [Perception, calibration, and navigation](skills/README.md#perception-calibration-and-navigation) | 9 |

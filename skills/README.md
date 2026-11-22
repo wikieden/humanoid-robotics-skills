@@ -2,7 +2,7 @@
 
 English · [简体中文](README.zh-CN.md)
 
-Choose among 53 skills by the decision you need to make. A new hardware observation, failure case or worked example belongs with the workflow it improves. Add a separate skill when a different question requires its own evidence and deliverable.
+Start with the [robot development entry skill](robot-dev-skills/SKILL.md) or choose one of the 53 specialists below. The collection contains 54 installable skills. A new hardware observation, failure case or worked example belongs with the workflow it improves. Add a separate skill when a different question requires its own evidence and deliverable.
 
 **Simulation and replay.** Build an [algorithm test environment][scene-build], trace a [missed waypoint][nav-replay], verify [contact after release][contact], compare [branches from a snapshot][restore], check [live preview timing][preview], or score [gait tracking and falls][gait]. Each workflow also appears in its engineering category below.
 
@@ -15,10 +15,11 @@ Choose among 53 skills by the decision you need to make. A new hardware observat
 
 ### Install one skill
 
-Copy the selected folder with its `SKILL.md` and its own `references/` directory when present. The first five files below contain the instructions for the named branch. Read them when performing that task. The last six are optional reading or worked examples. The other 42 packages contain their entire workflow in `SKILL.md`.
+Copy the selected folder with its `SKILL.md` and its own `references/` directory when present. The first six files support the entry skill or a named branch. Read the file needed for the task. The last six are optional reading or worked examples. The other 42 packages contain their entire workflow in `SKILL.md`.
 
 | Bundled file | When to use it |
 | --- | --- |
+| [robot-dev-skills/references/workflows.md](robot-dev-skills/references/workflows.md) | The entry skill uses this directory to select one of the 53 specialists before reading its guide. |
 | [robot-episode-audit/references/takeover-labels.md](robot-episode-audit/references/takeover-labels.md) | Label human takeovers and select consecutive expert-action windows. |
 | [robot-grasp-selection/references/grasp-algorithms.md](robot-grasp-selection/references/grasp-algorithms.md) | Choose an algorithm when the required output might be an object pose, a gripper pose or an action sequence. |
 | [robot-rgbd-pose/references/object-registration.md](robot-rgbd-pose/references/object-registration.md) | Register an existing metric cloud and resolve or report pose ambiguity. |
