@@ -16,4 +16,4 @@ Identify the oldest supported writer and a real fixture for each incompatible la
 
 **Worked case.** A legacy record says “place the marker” and has no start time. A current record says the same thing with a measured start time of zero. After migration both should yield the instruction. Only the second can supervise the segment start. If a downstream filter counts two timed starts, trace the first stage that converted absence into zero.
 
-**Deliverable.** Return the supported-version matrix, information preserved or lost, fixture outcomes, and a before/after count for the affected consumer. For conversion of the recorded sensor and action streams themselves, use [Episode and Training Dataset Audit](../robot-episode-audit/SKILL.md).
+**Deliverable.** Return the supported-version matrix, information preserved or lost, fixture outcomes, and a before/after count for the affected consumer. For conversion of the recorded sensor and action streams themselves, use [Episode and Training Dataset Audit (optional)](../robot-episode-audit/SKILL.md).

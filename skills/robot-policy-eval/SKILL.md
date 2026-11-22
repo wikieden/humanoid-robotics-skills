@@ -1,11 +1,11 @@
 ---
 name: robot-policy-eval
-description: Adapt or compare vision-language-action policies and world action models. Check observation and action contracts, checkpoint loading, action delivery timing, and paired simulation outcomes from reset or a shared handoff.
+description: Evaluate VLA and WAM checkpoints or compare robot policies such as SAC and PPO on matched task trials. Check observation and action contracts, action delivery timing, and paired outcomes from reset or a shared handoff.
 metadata:
-  title: VLA and WAM Policy Evaluation
+  title: Robot Policy Evaluation
 ---
 
-# VLA and WAM Policy Evaluation
+# Robot Policy Evaluation
 
 Identify the question under test: compatibility with a robot, continuous action delivery, or a change in task performance. Record the robot model, dataset version, checkpoint, inference configuration, control rate, and evaluation setting.
 
@@ -19,5 +19,7 @@ Identify the question under test: compatibility with a robot, continuous action 
 Choose the comparison unit before scoring: a fresh online rollout from reset, or two continuations from the same handoff state. For a policy comparison, each policy must generate its own actions on its own resulting observations. For a downstream execution comparison, a shared recorded prefix can isolate the change. Record the model calls used to create it separately from scored continuations. Verify both arms start from equivalent physical and controller state, including queues, random state and recurrent memory where relevant.
 
 Pin the scene, asset and sensor versions, physics step, renderer settings, camera poses, and action horizon. Read settings back after reset. If the same seed produces different behavior, compare the initial physical state, first rendered observations, first actions, and first physical divergence. Report paired counts (both succeeded, gained, lost, both failed), incomplete pairs, and native partial scores. Score the physical terminal condition separately, for example stable support after gripper withdrawal. Stratify by layout and host when relevant. Distinguish simulated time, wall-clock time, inference and offline video encoding.
+
+For a SAC versus PPO wiping comparison, match the initial stain layout, observations, action representation and trial budget. Save each proposed wipe segment, solver result and executed path. Count direct solves, fallback solves and infeasible segments separately. Score coverage from the measured tool path during effective contact and compare with observed stain removal. [Contact Task Simulation (optional)](../robot-sim-contact-validation/SKILL.md)
 
 **Deliverable.** Provide a comparison table with model and data versions, latency percentiles and sample counts, failure clips, and a reproducible entry point. If the only evidence is a trained checkpoint or offline inference, mark task success rate as unmeasured.

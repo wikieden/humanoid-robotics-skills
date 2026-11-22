@@ -31,4 +31,4 @@ assert peak_speed(1.5) <= limit
 print(f"peak at 1 s={peak_speed(1.0):g}, peak at 1.5 s={peak_speed(1.5):g} rad/s")
 ```
 
-**Deliverable.** Identify the first processing stage that produces a violation, provide the offending segment and interpolation parameters, and compare the original and revised curves under the same controller contract. A numerically feasible command still needs separate execution evidence. For broader task outcomes, use [Motion Control Validation](../robot-motion-validation/SKILL.md).
+**Deliverable.** Identify the first processing stage that produces a violation, provide the offending segment and interpolation parameters, and compare the original and revised curves under the same controller contract. For a feasible command that the robot failed to track, use [Motion Execution and Tracking Validation (optional)](../robot-motion-validation/SKILL.md).

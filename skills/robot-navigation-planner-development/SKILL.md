@@ -54,4 +54,4 @@ assert isclose(short[1], sqrt(0.1)) and isclose(long[1], 0.8)
 assert isclose(short[0], sqrt(0.5)) and short[-1] == 0.0
 ```
 
-**Deliverable.** Return the state and action space, objective, footprint and unknown-space rules, failure behavior, and a regression for the changed stage. Compare planners on the same map and start/goal set. Compare trackers separately on the same timed path, dynamics and command limits. Report feasible routes, swept clearance, solve latency, terminal error, and interventions at the evidence level actually exercised. For an end-to-end missed waypoint, use [Navigation Replay](../robot-navigation-replay/SKILL.md).
+**Deliverable.** Return the state and action space, objective, footprint and unknown-space rules, failure behavior, and a regression for the changed stage. Compare planners on the same map and start/goal set. Compare trackers separately on the same timed path, dynamics and command limits. Report feasible routes, swept clearance, solve latency, terminal error, and interventions at the evidence level actually exercised. For an end-to-end missed waypoint, use [Navigation Replay (optional)](../robot-navigation-replay/SKILL.md).

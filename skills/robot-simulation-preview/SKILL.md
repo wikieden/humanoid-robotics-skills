@@ -26,4 +26,4 @@ assert live_steps("new", 10, frames) == {2}
 assert live_steps("new", 10, frames + [("new", 5, 6)]) == {2, 5}
 ```
 
-**Deliverable.** Return the four run records, evidence of live frame progress and fault alignment, any result differences, and measured rendering overhead. To investigate the physical interaction itself, use [Contact Task Simulation](../robot-sim-contact-validation/SKILL.md).
+**Deliverable.** Return the four run records, evidence of live frame progress and fault alignment, any result differences, and measured rendering overhead. To investigate the physical interaction itself, use [Contact Task Simulation (optional)](../robot-sim-contact-validation/SKILL.md).

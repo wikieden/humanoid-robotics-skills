@@ -55,4 +55,4 @@ assert score([wrong_floor, wrong_floor]) == (None, True)
 assert score([None, good, None]) == (None, False)
 ```
 
-**Deliverable.** Return map build and reload identities, held-out evidence, each start and prior, time to lock, false accepts, and the effect on semantic layers. If localization is stable but the goal is missed, continue with [Navigation Replay](../robot-navigation-replay/SKILL.md).
+**Deliverable.** Return map build and reload identities, held-out evidence, each start and prior, time to lock, false accepts, and the effect on semantic layers. If localization is stable but the goal is missed, continue with [Navigation Replay (optional)](../robot-navigation-replay/SKILL.md).

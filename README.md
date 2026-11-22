@@ -2,28 +2,30 @@
 
 English · [简体中文](README.zh-CN.md)
 
-This collection contains 50 English-language agent skills. Of these, 43 cover humanoid and mobile manipulation robotics. The other seven cover agent evaluation and execution, technical learning, interactive applications, offline archives, skill distribution and technical publishing. Each skill is a Markdown workflow for a specific engineering decision, from tracing a reversed gripper command to deciding whether a new robot policy should replace its baseline.
+This collection contains 53 English-language agent skills. Of these, 46 cover humanoid and mobile manipulation robotics. The other seven cover agent evaluation and execution, technical learning, interactive applications, offline archives, skill distribution and technical publishing. Each skill is a Markdown workflow for a specific engineering decision, from tracing a reversed gripper command to deciding whether a new robot policy should replace its baseline.
 
 ## Use a skill
 
 Clone the repository, open the skill that matches your question, and give your agent the relevant inputs. For example:
 
-> Follow `skills/robot-takeover-audit/SKILL.md` to review this recording. One operator took control twice. Show which two-step action windows are eligible for behavior cloning and identify the evidence for each boundary.
+> Follow `skills/robot-episode-audit/SKILL.md` to review this recording. One operator took control twice. Show which two-step action windows are eligible for behavior cloning and identify the evidence for each boundary.
 
-The workflows can also be read directly by a human reviewer. To use an agent that discovers `SKILL.md` files from a local skills directory, copy the skill folders listed in the index there as siblings, including their `references/` subdirectories. This preserves the relative links between skills.
+To install one skill, copy its entire folder into your agent’s skills directory. Keep its bundled `references/` and open the guide for the task at hand. Sibling packages are optional. Installing the collection side by side also makes those companion links available offline. [Single-package file guide](skills/README.md#install-one-skill)
 
 ## Choose a workflow
 
 Browse the [skill index](skills/README.md) to choose a workflow by engineering question.
 
+Seven workflows now cover motion retargeting, simulation environment construction, joint feedback recovery, multi-component updates, edge vision scheduling, manipulator workspace regression, and continuous bag recording. For existing installations, the index lists the four retired names and their replacement guides. [Migration table](skills/README.md#existing-installations)
+
 | Category | Skills |
 | --- | ---: |
-| [Systems, deployment, and safety](skills/README.md#systems-deployment-and-safety) | 6 |
+| [Systems, deployment, and safety](skills/README.md#systems-deployment-and-safety) | 9 |
 | [Perception, calibration, and navigation](skills/README.md#perception-calibration-and-navigation) | 9 |
-| [Grasping, planning, and motion control](skills/README.md#grasping-planning-and-motion-control) | 9 |
+| [Grasping, planning, and motion control](skills/README.md#grasping-planning-and-motion-control) | 11 |
 | [Teleoperation and demonstration data](skills/README.md#teleoperation-and-demonstration-data) | 6 |
 | [Policy training and evaluation](skills/README.md#policy-training-and-evaluation) | 4 |
-| [Robot platform and cloud services](skills/README.md#robot-platform-and-cloud-services) | 9 |
+| [Robot platform and cloud services](skills/README.md#robot-platform-and-cloud-services) | 7 |
 | [Engineering methods for agents and technical learning](skills/README.md#engineering-methods-for-agents-and-technical-learning) | 3 |
 | [Interactive tools and offline archives](skills/README.md#interactive-tools-and-offline-archives) | 2 |
 | [Skill distribution and technical publishing](skills/README.md#skill-distribution-and-technical-publishing) | 2 |

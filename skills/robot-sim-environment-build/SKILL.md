@@ -1,0 +1,40 @@
+---
+name: robot-sim-environment-build
+description: Build a reproducible robot simulation environment from a task brief, real captures, generated 3D assets or a world model. Use when assembling a new scene, turning a visual reconstruction into an interactive test, or creating controlled scene variants for algorithm regression.
+metadata:
+  title: Building Robot Simulation Environments for Algorithm Iteration
+---
+
+# Building Robot Simulation Environments for Algorithm Iteration
+
+Start with a decision the environment must support. For example, can a mobile manipulator still approach a shelf when its depth changes, then lift a box using only its wrist camera and joint feedback? Write down which observations and actions the algorithm receives, how the scene responds, and which independent measurement will decide success.
+
+## Choose a source for each part of the scene
+
+| Starting material | What to build | What to verify on import |
+| --- | --- | --- |
+| Task description or floor plan | Have an LLM draft a scene manifest with named assets, dimensions in metres, frames, support relations, start/goal poses and bounded variations. Resolve IDs against an asset library and instantiate the manifest with a deterministic builder. | Reject unknown assets, inconsistent units, overlapping starts and unreachable targets designated as positive cases. A measured primitive is a useful first version of a shelf or doorway. |
+| Single-object images or meshes | Generate visual props with an image-to-3D tool such as Hunyuan3D. Preserve the source views, generator revision and original mesh. | Measure against a known dimension. Inspect hidden faces, handles and openings from the robot's viewpoints. Build a separate collision proxy where mesh detail affects contact. [Hunyuan3D asset generator](https://github.com/Tencent-Hunyuan/Hunyuan3D-2.1) |
+| Recorded scene to reconstruct | NVIDIA SimFoundry reconstructs objects and their arrangement from video, compiles scene geometry and physics, generates related variants, and provides an OmniGibson path for policy evaluation. Keep the reconstruction as the parent revision of its variants. | Compare a held-out view, a measured clearance and a recorded interaction. A generated drawer variant must still open in the required direction through the task's travel range. [SimFoundry pipelines](https://github.com/NVlabs/SimFoundry) |
+| Sparse views, a generated image or a rough layout | World Labs Atlas supports scene reconstruction, new camera views, grayboxing and splat-to-mesh conversion. Use the resulting world for backgrounds or perception variation. The earlier Marble robotics examples paired static scenes with separately imported robots and interactive props. | Align the visual world, collider and sensor frames with measured anchors. Mark unseen regions as inferred. Replace task-critical moving parts with articulated assets and remove their baked visual duplicates. [Atlas tools](https://worldlabs.ai/atlas) · [Marble robotics examples](https://worldlabs.ai/case-studies/1-robotics) |
+
+Record the origin, permitted use, version and checksum of each input and export. Store the accepted artifacts alongside the generation recipe. Running the same prompt again can change the geometry. For each physical parameter that affects the verdict, record its measurement, assumed range or calibration source.
+
+**Example request to an LLM scene author:** “The shelf top is 0.82 m above the floor. Place the supplied box on it inside the arm's measured reach. Draft two layouts using only the supplied asset IDs. Change only the box's lateral offset. Return parent frames, metric poses, support pairs and any unknown dimensions.” Instantiate both drafts, measure the settled box poses and run the same reachability check on each. Keep the draft and the accepted scene revision so an unexpected improvement can be traced to its source.
+
+For a video-based SimFoundry build, bring up a supplied example scene in the pinned runtime first. Then keep the reconstruction descriptor (`s14_og/reconstructed_og_scene.json`) and its referenced assets together, smoke-test that base scene in the application pipeline, and apply augmentation to a copy. Record which proposed task and variant actually loaded. [SimFoundry outputs and pipeline guide](https://github.com/NVlabs/SimFoundry#outputs)
+
+## Bring up one executable scene
+
+1. **Start with simple geometry.** In the target runtime, load the robot and one task fixture with known dimensions. Pin the simulator build, robot description, physics step, controller period, sensor configuration and launch command. Run headless from a clean process with relative asset paths. Add generated visuals after this baseline exercises the observation and action interfaces.
+2. **Make the interaction explicit.** Set the up axis, length units, gravity, object frames and robot footprint. Assign static supports, movable bodies, collision filters, mass/inertia and contact materials. Give doors and drawers their own links, axes and limits. Check the floor, narrowest clearance and resting contacts after settling. Thin shelves can disappear in a collider, and a single convex hull can seal a handle opening. [NVIDIA scene preparation workflow](https://developer.nvidia.com/blog/how-to-use-ai-agents-to-prepare-3d-scenes-for-simulation/)
+3. **Test what the algorithm sees and controls.** Specify action units and limits, camera intrinsics and extrinsics, depth convention, sensor rate and timestamps. Enter through the algorithm's normal interface. Compare one known landmark distance with the actual sensor output. Keep simulator truth for the scorer and expose only deployment-equivalent inputs to the algorithm. For a camera-conditioned world model, verify that a robot action changes the next physical state and the next observation before using it to score closed-loop control.
+4. **Try to break the scene before scoring an algorithm.** Reset twice to the same initial state and compare the first observation and scripted response within stated tolerances. Run a positive probe and a deliberate failure. For example, drive a probe into a known wall, then disable only its collisions. Both scenes can return the same initial range. Only the intact wall should stop the probe. Quarantine a scene that fails its contract and keep the reason in the run record. The [headless MuJoCo example](references/range-stop-bench.md) exercises this check and a paired algorithm change.
+
+## Turn a failure into a regression
+
+Freeze the validated scene, reset state, task predicate, seed and episode horizon. Run a baseline and a candidate independently from each matched start. Vary one cause at a time at first, such as lighting with fixed geometry, shelf depth with fixed textures, or friction with fixed mass. Record successes, collisions, timeouts, interventions and invalid environments separately. For a grasp, score stable support after release. For navigation, use measured arrival and clearance. Count early exits.
+
+Use a development failure to propose a new scene variant or an algorithm change. Version the changed component and rerun both algorithms if the environment changes. Keep all variants derived from a single capture or layout in the same split when testing generalization to new scenes. Freeze a held-out family before tuning. If the aim is to predict hardware performance, reserve independent physical observations and compare failures or policy rankings under matched conditions.
+
+**Deliverable.** Hand over a loadable scene bundle, its asset and parameter manifest, a reset-and-run command, the sensor/contact probe results and a per-scene baseline/candidate table. State which assumptions were exercised in simulation and which still need measurements.

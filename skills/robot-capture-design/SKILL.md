@@ -25,4 +25,4 @@ Run the intended target builder on each source. For each action dimension count 
 
 **Worked decision.** In a synthetic pilot of ten successful drawer openings, eight episodes have usable tool-pose tracks and six have usable gripper-width tracks. Between four and six episodes can have both. Join the episode IDs and intersect their valid time windows to count usable action chunks. All ten videos may still supervise visible task phases. Filling a missing width with zero would teach a false closed-gripper command.
 
-**Deliverable.** Return a source-by-target matrix, the paired pilot design, usable synchronized coverage, and the cheapest source that meets the declared target and error budget. For already converted episodes, use [Episode and Training Dataset Audit](../robot-episode-audit/SKILL.md).
+**Deliverable.** Return a source-by-target matrix, the paired pilot design, usable synchronized coverage, and the cheapest source that meets the declared target and error budget. For already converted episodes, use [Episode and Training Dataset Audit (optional)](../robot-episode-audit/SKILL.md).

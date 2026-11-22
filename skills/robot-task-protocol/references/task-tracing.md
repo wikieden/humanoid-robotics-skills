@@ -1,10 +1,3 @@
----
-name: robot-task-trace
-description: Trace guided tours, waypoint navigation, and other tasks across cloud services and a robot. Correlate service versions, task IDs, ROS 2 actions, and device acknowledgments to locate stalls or premature completion reports.
-metadata:
-  title: Cloud-to-Robot Task Tracing
----
-
 # Cloud-to-Robot Task Tracing
 
 Select one task and define its user-visible outcome, such as arriving at a waypoint and finishing the narration. Collect the device identifier, time window, map and waypoint versions, session ID, service version, and available task IDs. Start with existing records because replay can create a new device task.

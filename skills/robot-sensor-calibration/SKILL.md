@@ -25,4 +25,4 @@ Use the convention `p_target = T_target_from_source @ p_source` for homogeneous 
 
 **Deliverable.** Provide the candidate transform with direction, units, rigid parent, capture IDs, fit and holdout sets, residuals, and the downstream tolerance used for the decision. Identify any unobservable degrees of freedom. With no independent accuracy reference or task tolerance, report the measurements and the acceptance question that remains open.
 
-For an offline check of transform direction, stale mount poses, and depth scale, run the [synthetic calibration example](references/geometry-check.md). For object-specific pose ambiguity after calibration, use [RGB-D Perception and Pose Validation](../robot-rgbd-pose/SKILL.md).
+For an offline check of transform direction, stale mount poses, and depth scale, run the [synthetic calibration example](references/geometry-check.md). For object-specific pose ambiguity after calibration, use [RGB-D Perception and Pose Validation (optional)](../robot-rgbd-pose/SKILL.md).

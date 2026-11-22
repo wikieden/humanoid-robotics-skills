@@ -1,10 +1,3 @@
----
-name: robot-takeover-audit
-description: Audit recordings that mix policy control with human teleoperation. Identify expert labels for behavior cloning or HG-DAgger when recovery holds, late policy responses, or action chunks cross a takeover boundary.
-metadata:
-  title: Human Takeover and Expert Action Label Audit
----
-
 # Human Takeover and Expert Action Label Audit
 
 Collect the raw sequence before and after a complete handover, control-mode events, and the commands actually committed to the actuator. Preserve episode IDs, frame numbers, and the original timeline. If only video is available, annotate visible intervention and mark the source of the expert action as unverified.

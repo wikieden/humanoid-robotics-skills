@@ -9,6 +9,8 @@ metadata:
 
 Take one authored action, such as a gesture synchronized with speech. Identify the editable draft, the published artifact, the target robot or controller profile, each tenant's selected version, and the artifact resolved for execution. These are distinct records with different owners and lifetimes.
 
+If the clip still uses the source skeleton, produce a target-specific reference with [Motion Asset Binding and Retargeting (optional)](../robot-motion-retargeting/SKILL.md). Record the resulting target model and binding revision with the motion digest.
+
 1. Freeze the draft revision and asset digest when publishing. Check joint names and units, timing, configured limits, supported robot profiles, and referenced media. Record what the validation actually covered. Keep physical execution approval and collision or dynamics validation as separate evidence.
 2. Verify the intended tenant audience and immutable version lookup. Publish a second revision in an isolated catalog and resolve an existing tenant's pinned reference again. It should still resolve to the original bytes until an explicit version change succeeds.
 3. Exercise concurrent changes from the same prior tenant selection. Record the expected prior revision, operation identity, and committed result. A stale compare-and-swap should trigger a reread. After a lost response, reconcile the original operation before retrying.

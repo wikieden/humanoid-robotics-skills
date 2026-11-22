@@ -1,11 +1,17 @@
 ---
 name: robot-voice-playback
-description: Review spoken reply cancellation, narration delivery, duplicate playback, and completion acknowledgments. Use when synthesized audio is available but audible completion or suppression of an interrupted turn is uncertain.
+description: Diagnose robot speech that stutters or drops out during one utterance, or verify interrupted, duplicated or unconfirmed playback across turns and retries.
 metadata:
-  title: Robot Voice Interruption and Playback Acceptance
+  title: Robot Speech Playback and Continuity
 ---
 
-# Robot Voice Interruption and Playback Acceptance
+# Robot Speech Playback and Continuity
+
+**Speech cuts out during one uninterrupted utterance.** Go directly to the [streaming underrun guide](references/streaming-underruns.md). Trace playable milliseconds and output deadlines to the first observed shortage. With sender-only evidence, identify what the receiver must measure.
+
+For speech that resumes after interruption, repeats, or lacks a completion receipt, use the turn timeline below.
+
+## Turn interruption and delivery
 
 Pick one utterance and state the intended outcome, such as completing one announcement or cancelling an old reply after a user interruption. Identify the logical delivery, turn, target device, audio revision, and expiry. A transport retry can receive a new request identifier while referring to the same logical delivery.
 
