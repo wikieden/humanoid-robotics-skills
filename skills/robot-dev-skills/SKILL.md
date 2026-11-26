@@ -1,6 +1,6 @@
 ---
 name: robot-dev-skills
-description: Select and apply a specialist workflow for humanoid or mobile robot engineering questions, including direct troubleshooting and numerical checks. Covers ROS 2 and deployment, safety, perception and navigation, grasping, motion and control oscillation, robot asset import, simulation fault injection, teleoperation and datasets, VLA/WAM training, robot recursive self-improvement (RSI), candidate inheritance after retention losses, benchmark feedback exposure and compute sizing, and device, task and speech playback incidents. Also use for robotics team tooling, agent evaluations, study labs, offline archives, and skill or document distribution. Supports explicit robot-dev-skills requests and natural-language symptoms.
+description: Select and apply a specialist workflow for humanoid or mobile robot engineering. Use robot recursive self-improvement (RSI) guides for stage failure attribution, expert relabeling or takeover budgets and action supervision, and candidate inheritance when a retained task regresses or acceptance logs influenced tuning. Also covers ROS 2 and deployment, safety, perception and navigation, grasping and motion, control oscillation, robot asset import, simulation fault injection, teleoperation and datasets, VLA/WAM training and compute sizing, device and speech incidents, and robotics team tooling, agent evaluations, study labs, archives, and skill distribution.
 metadata:
   title: Robotics Development Workflow Router
 ---
