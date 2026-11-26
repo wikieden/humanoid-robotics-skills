@@ -2,7 +2,7 @@
 
 English · [简体中文](README.zh-CN.md)
 
-Start with the [robot development entry skill](robot-dev-skills/SKILL.md) or choose one of the 56 specialists below. The collection contains 57 installable skills. A new hardware observation, failure case or worked example belongs with the workflow it improves. Add a separate skill when a different question requires its own evidence and deliverable.
+Start with the [robot development entry skill](robot-dev-skills/SKILL.md) or choose one of the 59 specialists below. The collection contains 60 installable skills. A new hardware observation, failure case or worked example belongs with the workflow it improves. Add a separate skill when a different question requires its own evidence and deliverable.
 
 **Simulation and replay.** Build an [algorithm test environment][scene-build], trace a [missed waypoint][nav-replay], verify [contact after release][contact], compare [branches from a snapshot][restore], check [live preview timing][preview], or score [gait tracking and falls][gait]. Each workflow also appears in its engineering category below.
 
@@ -15,11 +15,11 @@ Start with the [robot development entry skill](robot-dev-skills/SKILL.md) or cho
 
 ### Install one skill
 
-Copy the selected folder with its `SKILL.md` and its own `references/` directory when present. The first six files support the entry skill or a named branch. Read the file needed for the task. The last six are optional reading or worked examples. The other 45 packages contain their entire workflow in `SKILL.md`.
+Copy the selected folder with its `SKILL.md` and its own `references/` directory when present. The first six files support the entry skill or a named branch. Read the file needed for the task. The last six are optional reading or worked examples. The other 48 packages contain their entire workflow in `SKILL.md`.
 
 | Bundled file | When to use it |
 | --- | --- |
-| [robot-dev-skills/references/workflows.md](robot-dev-skills/references/workflows.md) | The entry skill uses this directory to select one of the 56 specialists before reading its guide. |
+| [robot-dev-skills/references/workflows.md](robot-dev-skills/references/workflows.md) | The entry skill uses this directory to select one of the 59 specialists before reading its guide. |
 | [robot-episode-audit/references/takeover-labels.md](robot-episode-audit/references/takeover-labels.md) | Label human takeovers and select consecutive expert-action windows. |
 | [robot-grasp-selection/references/grasp-algorithms.md](robot-grasp-selection/references/grasp-algorithms.md) | Choose an algorithm when the required output might be an object pose, a gripper pose or an action sequence. |
 | [robot-rgbd-pose/references/object-registration.md](robot-rgbd-pose/references/object-registration.md) | Register an existing metric cloud and resolve or report pose ambiguity. |
@@ -52,6 +52,8 @@ Four former skills are now references in their parent packages. Refresh the enti
 | Who owns each joint if a process restarts mid-maneuver? | [ROS 2 architecture](robot-ros2-architecture/SKILL.md) |
 | Which devices and DDS traffic can each Pod access? | [Pod deployment](robot-ros2-pod-deployment/SKILL.md) |
 | How can a brief, real capture or generated 3D asset become a repeatable robot algorithm test environment? | [Simulation environment construction](robot-sim-environment-build/SKILL.md) |
+| Did importing a robot description change the inertia, actuator mapping or collision behaviour? | [Robot asset import and physics validation](robot-sim-asset-validation/SKILL.md) |
+| Did a simulation fault actually activate, and which downstream signal changed first? | [Simulation fault injection and attribution](robot-sim-fault-injection/SKILL.md) |
 | Where did a command or acknowledgment stop between Linux and the MCU? | [Embedded bring-up](robot-embedded-bringup/SKILL.md) |
 | After an interrupted update, which controller, host and model versions are actually active together? | [Multi-component update recovery](robot-update-recovery/SKILL.md) |
 | Why are arm joints still visible while the planner rejects its start state after a gripper feedback gap? | [Joint feedback freshness and recovery](robot-joint-feedback/SKILL.md) |
@@ -83,6 +85,7 @@ Four former skills are now references in their parent packages. Refresh the enti
 | Does the controller exceed a limit between valid waypoints? | [Trajectory retiming](robot-trajectory-retiming/SKILL.md) |
 | Which workspace regions produce invalid trajectories or excessive refusals from a particular arm planner? | [Manipulator workspace regression](robot-planner-workspace-regression/SKILL.md) |
 | A plan succeeded. Where did dispatch, base-to-arm handoff or measured motion first diverge? | [Motion execution and tracking](robot-motion-validation/SKILL.md) |
+| Why does a joint oscillate or overshoot under a steady command? | [Control oscillation diagnosis](robot-control-oscillation/SKILL.md) |
 | Did the simulated object stay supported after release, or did an attachment or scoring shortcut keep it in place? | [Contact task simulation](robot-sim-contact-validation/SKILL.md) |
 | After restoring a mid-task snapshot, does the same action reproduce the uninterrupted contact and motion? | [Simulation snapshot and branch verification](robot-sim-state-restore/SKILL.md) |
 | Did the preview show this run before it finished, and did rendering affect the result? | [Live simulation preview verification](robot-simulation-preview/SKILL.md) |

@@ -2,7 +2,7 @@
 
 [English](README.md) · 简体中文
 
-从[机器人开发主入口](robot-dev-skills/SKILL.md)描述任务，或从下方 56 个专项中直接选择。整套共 57 个 skill。新的硬件观测、故障案例或算例，放入能用到它的现有流程。遇到需要不同输入证据、给出不同工程结论的问题，再建独立 skill。
+从[机器人开发主入口](robot-dev-skills/SKILL.md)描述任务，或从下方 59 个专项中直接选择。整套共 60 个 skill。新的硬件观测、故障案例或算例，放入能用到它的现有流程。遇到需要不同输入证据、给出不同工程结论的问题，再建独立 skill。
 
 **仿真与回放速查。** 从[搭建算法测试环境][scene-build]开始，或直接进入[导航未到点回放][nav-replay]、[释放后的接触验证][contact]、[快照恢复与分支对照][restore]、[实时预览验证][preview]或[步态跟踪与摔倒评测][gait]。下方分类表中可以找到同一入口。
 
@@ -15,11 +15,11 @@
 
 ### 单独安装一个 skill
 
-复制所选 skill 的完整目录，保留 `SKILL.md` 和同包的 `references/`（如有）。下表前六项是主入口或对应分支需要的资料，使用时按需读取。后六项是可选阅读或离线算例。其余 45 个包的全部说明都在各自的 `SKILL.md`。
+复制所选 skill 的完整目录，保留 `SKILL.md` 和同包的 `references/`（如有）。下表前六项是主入口或对应分支需要的资料，使用时按需读取。后六项是可选阅读或离线算例。其余 48 个包的全部说明都在各自的 `SKILL.md`。
 
 | 包内资料 | 何时使用 |
 | --- | --- |
-| [robot-dev-skills/references/workflows.md](robot-dev-skills/references/workflows.md) | 主入口用它按问题查找 56 个专项，然后只读取选中的指南。 |
+| [robot-dev-skills/references/workflows.md](robot-dev-skills/references/workflows.md) | 主入口用它按问题查找 59 个专项，然后只读取选中的指南。 |
 | [robot-episode-audit/references/takeover-labels.md](robot-episode-audit/references/takeover-labels.md) | 判定接管动作标签和连续专家动作窗口。 |
 | [robot-grasp-selection/references/grasp-algorithms.md](robot-grasp-selection/references/grasp-algorithms.md) | 在物体位姿、夹爪位姿和动作序列之间选算法路线。 |
 | [robot-rgbd-pose/references/object-registration.md](robot-rgbd-pose/references/object-registration.md) | 从已有公制点云做配准，判定朝向是否可区分。 |
@@ -52,6 +52,8 @@
 | 机器人伸手时感知进程重启，谁负责保持平衡，谁仍有权下发关节指令？ | [ROS 2 架构设计与审查](robot-ros2-architecture/SKILL.md) |
 | 每个 Pod 能访问哪些设备、收到哪些 DDS 消息？ | [Pod 部署与环境隔离](robot-ros2-pod-deployment/SKILL.md) |
 | 如何把场景描述、实拍视频或生成的 3D 资产搭成可复现的机器人算法测试环境？ | [仿真环境搭建与算法回归](robot-sim-environment-build/SKILL.md) |
+| 机器人资产转换后，惯量、执行器映射和碰撞行为是否仍符合预期？ | [机器人资产导入与物理验收](robot-sim-asset-validation/SKILL.md) |
+| 仿真故障有没有真正触发，下游最先在哪个信号出现变化？ | [仿真故障注入与归因](robot-sim-fault-injection/SKILL.md) |
 | 板端服务已受理命令，反馈在哪一层中断？ | [嵌入式与 MCU 联调](robot-embedded-bringup/SKILL.md) |
 | 升级中断后，主机、控制器和模型分别运行哪个版本，这个组合能否继续工作？ | [整机多组件升级与恢复](robot-update-recovery/SKILL.md) |
 | 手臂关节仍有实测反馈，为什么夹爪短暂断流后规划器就拒绝起始状态？ | [关节反馈时效与恢复](robot-joint-feedback/SKILL.md) |
@@ -83,6 +85,7 @@
 | 路点均达标，控制器插值后的速度或加速度是否超限？ | [轨迹定时与插值](robot-trajectory-retiming/SKILL.md) |
 | 机械臂规划器在哪些工作空间区域返回无效轨迹，或频繁拒绝已知可行的请求？ | [机械臂规划器工作空间回归](robot-planner-workspace-regression/SKILL.md) |
 | 规划成功后，指令下发、底盘到手臂的交接、实测运动，最先在哪一步出现偏差？ | [运动执行与跟踪验证](robot-motion-validation/SKILL.md) |
+| 固定指令下关节仍持续振荡，怎样区分指令、反馈、饱和及积分累积？ | [控制振荡诊断](robot-control-oscillation/SKILL.md) |
 | 仿真松爪后，物体确实得到支撑，还是被残留约束固定在原位？ | [接触任务仿真验收](robot-sim-contact-validation/SKILL.md) |
 | 从任务中途的快照恢复后，同一动作还能复现连续运行时的接触和运动吗？ | [仿真快照恢复与分支验证](robot-sim-state-restore/SKILL.md) |
 | 预览是否在本次仿真结束前就显示了新画面，开启渲染会不会改变结果？ | [仿真实时预览验证](robot-simulation-preview/SKILL.md) |

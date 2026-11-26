@@ -1,6 +1,6 @@
 ---
 name: robot-dev-skills
-description: Select and apply a specialist workflow for humanoid or mobile robot engineering questions, including direct troubleshooting and numerical checks. Covers ROS 2 and deployment, safety, perception and navigation, grasping and motion, simulation, teleoperation and datasets, VLA/WAM training, robot recursive self-improvement (RSI), candidate inheritance after retention losses, benchmark feedback exposure and compute sizing, and device, task and speech playback incidents. Also use for robotics team tooling, agent evaluations, study labs, offline archives, and skill or document distribution. Supports explicit robot-dev-skills requests and natural-language symptoms.
+description: Select and apply a specialist workflow for humanoid or mobile robot engineering questions, including direct troubleshooting and numerical checks. Covers ROS 2 and deployment, safety, perception and navigation, grasping, motion and control oscillation, robot asset import, simulation fault injection, teleoperation and datasets, VLA/WAM training, robot recursive self-improvement (RSI), candidate inheritance after retention losses, benchmark feedback exposure and compute sizing, and device, task and speech playback incidents. Also use for robotics team tooling, agent evaluations, study labs, offline archives, and skill or document distribution. Supports explicit robot-dev-skills requests and natural-language symptoms.
 metadata:
   title: Robotics Development Workflow Router
 ---
@@ -16,6 +16,8 @@ Use the [workflow directory](references/workflows.md) to match the user's intend
 3. Follow a reference only when the selected guide calls for it on this task. Resolve it relative to the file that contains the link, using the same checkout or pinned revision. If the guide or a required reference is unavailable, give its exact package and relative path, identify what is missing, and point to the full-checkout or selected-package installation. Only claim to have used files actually read.
 
 ## Route by the decision
+
+- For an imported robot with wrong mass, joint direction or contacts, use `robot-sim-asset-validation`. For a clean/fault experiment whose fault may never have fired, use `robot-sim-fault-injection`. Use `robot-simulation-preview` when the result is about what the viewer showed during the run.
 
 - A motion clip skates when transferred to a shorter robot. Start with `robot-motion-retargeting` to check the mapping and stance constraints. If the exported clip passes FK checks but feedback diverges during execution, continue with `robot-motion-validation` using the accepted reference and measured trace.
 - For a failed waypoint, route a recorded incident to `robot-navigation-replay`, a change to scan matching to `robot-slam-development`, and a saved map that locks onto the wrong floor to `robot-map-relocalization`.

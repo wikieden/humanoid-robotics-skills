@@ -2,7 +2,7 @@
 
 English · [简体中文](README.zh-CN.md)
 
-This collection contains 57 English-language agent skills. One entry skill routes to 56 specialists. Of those specialists, 49 cover humanoid and mobile manipulation robotics. The other seven cover agent evaluation and execution, technical learning, interactive applications, offline archives, skill distribution and technical publishing. Each skill is a Markdown workflow for a specific engineering decision, from tracing a reversed gripper command to deciding whether a new robot policy should replace its baseline.
+This collection contains 60 English-language agent skills. One entry skill routes to 59 specialists. Of those specialists, 52 cover humanoid and mobile manipulation robotics. The other seven cover agent evaluation and execution, technical learning, interactive applications, offline archives, skill distribution and technical publishing. Each skill is a Markdown workflow for a specific engineering decision, from tracing a reversed gripper command to deciding whether a new robot policy should replace its baseline.
 
 ## Use the collection through one entry skill
 
@@ -31,6 +31,8 @@ The [routing regression cases](tests/robot-dev-skills/cases.md) include a direct
 
 Eight [algorithm checks](tests/robot-dev-skills/method-checks.md) include primary sources, executable counterexamples and observed results for motion, navigation, perception and policy development.
 
+For simulation, [asset import validation](skills/robot-sim-asset-validation/SKILL.md) checks the converted robot's kinematics and physics. [Fault injection and attribution](skills/robot-sim-fault-injection/SKILL.md) checks whether a fault fired before scoring recovery.
+
 You can also copy just the `robot-dev-skills/` package, including `references/workflows.md`. It reads a locally installed specialist or a checkout you identify first. If neither is available, it can read the selected guide from a pinned public GitHub commit. With only the entry package and no network, it identifies the missing package. For a specialist added after that pin, use a matching checkout or supply its published full commit ID.
 
 ## Use a skill
@@ -49,9 +51,9 @@ Seven workflows now cover motion retargeting, simulation environment constructio
 
 | Category | Specialist skills |
 | --- | ---: |
-| [Systems, deployment, and safety](skills/README.md#systems-deployment-and-safety) | 9 |
+| [Systems, deployment, and safety](skills/README.md#systems-deployment-and-safety) | 11 |
 | [Perception, calibration, and navigation](skills/README.md#perception-calibration-and-navigation) | 9 |
-| [Grasping, planning, and motion control](skills/README.md#grasping-planning-and-motion-control) | 11 |
+| [Grasping, planning, and motion control](skills/README.md#grasping-planning-and-motion-control) | 12 |
 | [Teleoperation and demonstration data](skills/README.md#teleoperation-and-demonstration-data) | 6 |
 | [Policy training and evaluation](skills/README.md#policy-training-and-evaluation) | 7 |
 | [Robot platform and cloud services](skills/README.md#robot-platform-and-cloud-services) | 7 |

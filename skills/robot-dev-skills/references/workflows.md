@@ -9,6 +9,8 @@ Choose a package by the engineering question. The package name locates its `SKIL
 | Who owns each joint if a process restarts mid-maneuver? | `robot-ros2-architecture` |
 | Which devices and DDS traffic can each Pod access? | `robot-ros2-pod-deployment` |
 | How can a brief, real capture or generated 3D asset become a repeatable robot algorithm test environment? | `robot-sim-environment-build` |
+| Did importing a robot description change the inertia, actuator mapping or collision behaviour? | `robot-sim-asset-validation` |
+| Did a simulation fault actually activate, and which downstream signal changed first? | `robot-sim-fault-injection` |
 | Where did a command or acknowledgment stop between Linux and the MCU? | `robot-embedded-bringup` |
 | After an interrupted update, which controller, host and model versions are actually active together? | `robot-update-recovery` |
 | Why are arm joints still visible while the planner rejects its start state after a gripper feedback gap? | `robot-joint-feedback` |
@@ -40,6 +42,7 @@ Choose a package by the engineering question. The package name locates its `SKIL
 | Does the controller exceed a limit between valid waypoints? | `robot-trajectory-retiming` |
 | Which workspace regions produce invalid trajectories or excessive refusals from a particular arm planner? | `robot-planner-workspace-regression` |
 | A plan succeeded. Where did dispatch, base-to-arm handoff or measured motion first diverge? | `robot-motion-validation` |
+| Why does a joint oscillate or overshoot under a steady command? | `robot-control-oscillation` |
 | Did the simulated object stay supported after release, or did an attachment or scoring shortcut keep it in place? | `robot-sim-contact-validation` |
 | After restoring a mid-task snapshot, does the same action reproduce the uninterrupted contact and motion? | `robot-sim-state-restore` |
 | Did the preview show this run before it finished, and did rendering affect the result? | `robot-simulation-preview` |
